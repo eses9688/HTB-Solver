@@ -1,0 +1,8 @@
+# Nmap 7.99 scan initiated Fri Aug 14 16:26:32 2026 as: /usr/lib/nmap/nmap --privileged -sT -p- --min-rate 3000 -Pn -oN /mnt/c/HTB/Meow/scans/E01_nmap_full_tcp.txt 10.129.59.55
+Nmap scan report for 10.129.59.55
+Host is up (0.23s latency).
+Not shown: 65534 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+23/tcp open  telnet
+
+# Nmap done at Fri Aug 14 16:27:02 2026 -- 1 IP address (1 host up) scanned in 29.46 seconds

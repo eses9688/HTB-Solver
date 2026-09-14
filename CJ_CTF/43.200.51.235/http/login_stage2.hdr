@@ -1,0 +1,15 @@
+HTTP/1.1 302 FOUND
+Server: nginx/1.27.5
+Date: Tue, 18 Aug 2026 07:30:37 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 211
+Connection: keep-alive
+Location: /ops-status/
+Vary: Cookie
+Set-Cookie: session=eyJ1c2VyIjoic3ZjLW1vbml0b3IifQ.aoQKHQ.DJfg30lucnQB40CiXpIb5YlQzNA; HttpOnly; Path=/
+
+<!doctype html>
+<html lang=en>
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to the target URL: <a href="/ops-status/">/ops-status/</a>. If not, click the link.

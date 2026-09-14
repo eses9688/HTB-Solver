@@ -1,0 +1,12 @@
+user:[scott] rid:[0x3e8]
+Domain:		WORKGROUP
+Server:		ABDUCTED
+Comment:	Hartley Group Document Services
+Total Users:	1
+Total Groups:	0
+Total Aliases:	0
+Sequence No:	1788657816
+Force Logoff:	4294967295
+Domain Server State:	0x1
+Server Role:	ROLE_DOMAIN_PDC
+Unknown 3:	0x1

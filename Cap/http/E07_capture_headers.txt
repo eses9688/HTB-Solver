@@ -1,0 +1,8 @@
+HTTP/1.1 302 FOUND
+Server: gunicorn
+Date: Fri, 14 Aug 2026 07:53:55 GMT
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Content-Length: 220
+Location: http://10.129.8.179/data/1
+

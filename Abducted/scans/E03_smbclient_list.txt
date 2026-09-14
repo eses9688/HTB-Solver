@@ -1,0 +1,11 @@
+smbXcli_negprot_smb1_done: No compatible protocol selected by server.
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	HP-Reception    Printer   Reception printer
+	projects        Disk      Hartley Group Project Files
+	transfer        Disk      Staff file transfer
+	IPC$            IPC       IPC Service (Hartley Group Document Services)
+Reconnecting with SMB1 for workgroup listing.
+Protocol negotiation to server 10.129.244.177 (for a protocol between LANMAN1 and NT1) failed: NT_STATUS_INVALID_NETWORK_RESPONSE
+Unable to connect with SMB1 -- no workgroup available

@@ -1,0 +1,10 @@
+HTTP/1.1 302 FOUND
+Server: nginx/1.27.5
+Date: Tue, 18 Aug 2026 06:14:52 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 211
+Connection: keep-alive
+Location: /ops-status/
+Vary: Cookie
+Set-Cookie: session=eyJ1c2VyIjoic3ZjLW1vbml0b3IifQ.aoP4XA.SUNnxbMNY3u1NG5NB5qlu-OuSjY; HttpOnly; Path=/
+

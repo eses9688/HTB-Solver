@@ -1,0 +1,9 @@
+# Nmap 7.99 scan initiated Mon Aug 24 14:35:20 2026 as: /usr/lib/nmap/nmap --privileged -p- --min-rate 3000 -T4 -Pn -oA /mnt/c/HTB/Nexus/scans/E01_nmap_full_tcp 10.129.12.96
+Nmap scan report for 10.129.12.96
+Host is up (0.33s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+# Nmap done at Mon Aug 24 14:35:48 2026 -- 1 IP address (1 host up) scanned in 28.40 seconds

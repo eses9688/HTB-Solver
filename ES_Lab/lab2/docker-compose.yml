@@ -1,0 +1,27 @@
+services:
+  portal:
+    build: ./portal
+    container_name: es-portal
+    restart: unless-stopped
+    ports:
+      - "80:5000"
+    networks:
+      - lab2-net
+      - internal-net-2
+
+  imds-mock:
+    build: ./imds-mock
+    container_name: es-imds-mock
+    restart: unless-stopped
+    networks:
+      internal-net-2:
+        ipv4_address: 169.254.169.254
+
+networks:
+  lab2-net:
+    driver: bridge
+  internal-net-2:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 169.254.0.0/16

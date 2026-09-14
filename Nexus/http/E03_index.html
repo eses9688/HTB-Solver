@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Energy Authority — Powering the Nation's Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red: #d31f3a;
+            --red-dark: #b01830;
+            --dark: #1a1a1a;
+            --mid: #2d2d2d;
+            --text: #1a1a1a;
+            --text-muted: #666;
+            --border: #e0e0e0;
+            --bg: #fff;
+            --bg-alt: #f5f5f5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            overflow-x: hidden;
+        }
+
+        /* ── ANNOUNCEMENT BAR ── */
+        .announcement {
+            background: var(--dark);
+            color: #ccc;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-family: 'DM Mono', monospace;
+            letter-spacing: 0.04em;
+            border-bottom: 2px solid var(--red);
+        }
+        .announcement strong { color: #fff; }
+        .announcement a { color: var(--red); text-decoration: none; font-weight: 600; }
+
+        /* ── NAVIGATION ── */
+        nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 200;
+        }
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        .logo-block {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+        .logo-seal {
+            width: 42px;
+            height: 42px;
+            border: 2px solid var(--red);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .logo-text .org {
+            font-family: 'EB Garamond', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.1;
+            display: block;
+        }
+        .logo-text .sub {
+            font-size: 10px;
+            color: var(--red);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            display: block;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 4px;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--red); }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, #f5f5f5 0%, #efefef 100%);
+            padding: 100px 40px;
+        }
+        .hero-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .hero-label .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22a35e;
+            animation: blink 2s infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+        .hero-label span {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-family: 'DM Mono', monospace;
+            font-weight: 500;
+        }
+        .hero h1 {
+            font-family: 'EB Garamond', serif;
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+        .hero h1 em { font-style: italic; color: var(--red); }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.65;
+            max-width: 500px;
+        }
+
+        /* Hero stats */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .stat-block {
+            background: #fff;
+            padding: 32px 28px;
+            transition: background 0.2s;
+        }
+        .stat-block:hover { background: #fdf5f6; }
+        .stat-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+        .stat-num {
+            font-family: 'EB Garamond', serif;
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--red);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-num.green { color: #1a7a4a; }
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* ── ALERT ── */
+        .alert-banner {
+            background: #fff8f8;
+            border-top: 4px solid var(--red);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 40px;
+        }
+        .alert-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .alert-badge {
+            background: var(--red);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 5px 12px;
+            border-radius: 3px;
+            white-space: nowrap;
+            font-family: 'DM Mono', monospace;
+        }
+        .alert-text { font-size: 14px; color: var(--text); line-height: 1.5; }
+        .alert-text strong { color: var(--dark); }
+
+        /* ── SECTION SHARED ── */
+        .section { padding: 80px 40px; }
+        .section-inner { max-width: 1400px; margin: 0 auto; }
+        .section-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .eyebrow-line { width: 36px; height: 2px; background: var(--red); }
+        .eyebrow-text {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-weight: 600;
+            color: var(--red);
+            font-family: 'DM Mono', monospace;
+        }
+        .section-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .section-sub {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 600px;
+            margin-bottom: 50px;
+        }
+
+        /* ── PROGRAMMES ── */
+        .programmes { background: #fff; }
+        .prog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .prog-card {
+            background: #fff;
+            padding: 40px 32px;
+            transition: background 0.25s;
+        }
+        .prog-card:hover { background: var(--dark); }
+        .prog-card:hover .prog-title { color: #fff; }
+        .prog-card:hover .prog-desc { color: rgba(255,255,255,0.6); }
+        .prog-card:hover .prog-num { color: rgba(255,255,255,0.08); }
+        .prog-num {
+            font-family: 'EB Garamond', serif;
+            font-size: 60px;
+            font-weight: 800;
+            color: #f0f0f0;
+            line-height: 1;
+            margin-bottom: -8px;
+            transition: color 0.25s;
+        }
+        .prog-icon { font-size: 34px; margin-bottom: 16px; display: block; }
+        .prog-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+            line-height: 1.25;
+            transition: color 0.25s;
+        }
+        .prog-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.65;
+            transition: color 0.25s;
+        }
+
+        /* ── ENERGY MIX ── */
+        .energy-mix { background: var(--bg-alt); }
+        .mix-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 70px;
+            align-items: center;
+        }
+        .mix-bars { display: flex; flex-direction: column; gap: 20px; }
+        .mix-bar-row {
+            display: grid;
+            grid-template-columns: 110px 1fr 52px;
+            align-items: center;
+            gap: 14px;
+        }
+        .mix-bar-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .mix-bar-track {
+            height: 10px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .mix-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            animation: growBar 1.4s cubic-bezier(0.22,1,0.36,1) forwards;
+            animation-delay: 0.2s;
+            width: 0;
+        }
+        @keyframes growBar { from{width:0} to{width:var(--target-width)} }
+        .mix-bar-pct {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: right;
+        }
+        .mix-info {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 40px 36px;
+        }
+        .mix-info-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 14px;
+            line-height: 1.25;
+        }
+        .mix-info p {
+            font-size: 14.5px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .mix-target {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 24px;
+            background: rgba(211,31,58,0.05);
+            border: 1px solid rgba(211,31,58,0.2);
+            border-radius: 4px;
+        }
+        .mix-target-num {
+            font-family: 'EB Garamond', serif;
+            font-size: 50px;
+            font-weight: 800;
+            color: var(--red);
+            line-height: 1;
+        }
+        .mix-target-text { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+        .mix-target-text strong { color: var(--dark); }
+
+        /* ── NEWS ── */
+        .news { background: #fff; }
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 28px;
+        }
+        .news-main {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .news-main-img {
+            height: 260px;
+            background: linear-gradient(135deg, var(--dark) 0%, #333 50%, var(--red-dark) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 28px;
+            position: relative;
+        }
+        .news-img-icon {
+            font-size: 80px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-60%);
+            opacity: 0.15;
+        }
+        .news-category {
+            font-size: 10px;
+            background: var(--red);
+            color: #fff;
+            padding: 4px 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 3px;
+            font-family: 'DM Mono', monospace;
+        }
+        .news-main-body { padding: 28px; }
+        .news-main-body h3 {
+            font-family: 'EB Garamond', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.25;
+            margin: 14px 0 12px;
+        }
+        .news-main-body p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+        .news-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: 'DM Mono', monospace;
+            display: flex;
+            gap: 14px;
+            margin-top: 18px;
+        }
+        .news-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            background: var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .news-item {
+            background: #fff;
+            padding: 22px 24px;
+            border-left: 3px solid transparent;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .news-item:hover { background: var(--bg-alt); border-left-color: var(--red); }
+        .news-item-cat {
+            font-size: 10px;
+            color: var(--red);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            font-family: 'DM Mono', monospace;
+        }
+        .news-item h4 {
+            font-family: 'EB Garamond', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        .news-item-date {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-family: 'DM Mono', monospace;
+        }
+
+        /* ── TESTIMONIALS ── */
+        .testimonials { background: var(--bg-alt); }
+        .t-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .t-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 8px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .t-card:hover { border-color: var(--red); box-shadow: 0 8px 24px rgba(211,31,58,0.08); }
+        .t-stars { color: #ffc107; font-size: 14px; margin-bottom: 16px; }
+        .t-quote {
+            font-family: 'EB Garamond', serif;
+            font-size: 17px;
+            font-style: italic;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 24px;
+        }
+        .t-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
+        }
+        .t-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .t-name { font-weight: 600; font-size: 14px; color: var(--dark); margin-bottom: 2px; }
+        .t-role { font-size: 12px; color: var(--text-muted); }
+
+        /* ── CTA ── */
+        .cta-section {
+            background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-family: 'EB Garamond', serif;
+            font-size: 44px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .cta-section p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* ── CAREERS ── */
+        .careers { background: var(--bg-alt); }
+        .jobs-list {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .job-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        .job-card:hover {
+            border-color: var(--red);
+            box-shadow: 0 8px 28px rgba(211,31,58,0.1);
+            transform: translateY(-3px);
+        }
+        .job-card-left {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+        .job-icon {
+            width: 54px;
+            height: 54px;
+            background: #fdf0f2;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            flex-shrink: 0;
+        }
+        .job-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+            font-family: 'EB Garamond', serif;
+        }
+        .job-meta { display: flex; gap: 16px; flex-wrap: wrap; }
+        .job-tag {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: var(--bg-alt);
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+        .job-tag.highlight { color: var(--red); background: #fdf0f2; }
+        .job-card-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+        .job-salary {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--dark);
+            font-family: 'EB Garamond', serif;
+        }
+        .btn-view-job {
+            padding: 10px 22px;
+            background: var(--red);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .btn-view-job:hover { background: var(--red-dark); }
+
+        /* ── MODAL ── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 500;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .modal-overlay.open { display: flex; }
+        .modal-box {
+            background: #fff;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 860px;
+            max-height: 90vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+        }
+        .modal-head {
+            background: var(--dark);
+            padding: 24px 32px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            border-bottom: 3px solid var(--red);
+            flex-shrink: 0;
+        }
+        .modal-head h3 {
+            font-family: 'EB Garamond', serif;
+            font-size: 21px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .modal-head p { font-size: 12px; color: rgba(255,255,255,0.5); font-family: 'DM Mono', monospace; }
+        .modal-close-btn {
+            width: 34px;
+            height: 34px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            border-radius: 4px;
+            color: rgba(255,255,255,0.7);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+        .modal-close-btn:hover { background: rgba(255,255,255,0.2); }
+        .modal-body { overflow-y: auto; padding: 36px 40px 44px; }
+        .modal-section { margin-bottom: 28px; }
+        .modal-section h4 {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--red);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            font-family: 'DM Mono', monospace;
+        }
+        .modal-section p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+        .modal-section ul { list-style: none; }
+        .modal-section ul li {
+            font-size: 14px;
+            color: var(--text-muted);
+            padding: 5px 0 5px 18px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .modal-section ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-size: 12px;
+            top: 7px;
+        }
+        .modal-apply {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px 32px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .modal-apply h3 {
+            font-family: 'EB Garamond', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        .modal-apply p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 4px; }
+        .apply-email {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 12px 28px;
+            background: var(--red);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .apply-email:hover { background: var(--red-dark); }
+        .hiring-manager {
+            margin-top: 12px;
+            font-size: 12px;
+            color: #999;
+        }
+        .hiring-manager a { color: var(--red); text-decoration: none; font-weight: 600; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--dark);
+            color: #fff;
+            border-top: 3px solid var(--red);
+        }
+        .footer-top {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(4, 1fr);
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        .f-org {
+            font-family: 'EB Garamond', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .f-sub {
+            font-size: 10px;
+            color: var(--red);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 18px;
+            display: block;
+        }
+        .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; }
+        .footer-col h5 {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 18px;
+            font-family: 'DM Mono', monospace;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 13.5px;
+            transition: color 0.2s;
+        }
+        .footer-col ul a:hover { color: var(--red); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.35); font-family: 'DM Mono', monospace; }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a {
+            font-size: 12px;
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            font-family: 'DM Mono', monospace;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--red); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 50px; }
+            .hero h1 { font-size: 42px; }
+            .prog-grid { grid-template-columns: repeat(2, 1fr); }
+            .mix-layout { grid-template-columns: 1fr; }
+            .news-grid { grid-template-columns: 1fr; }
+            .t-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            nav ul { display: none; }
+        }
+        @media (max-width: 640px) {
+            .section { padding: 60px 20px; }
+            .hero { padding: 70px 20px; }
+            .hero h1 { font-size: 34px; }
+            .prog-grid { grid-template-columns: 1fr; }
+            .t-grid { grid-template-columns: 1fr; }
+            .job-card { flex-direction: column; align-items: flex-start; }
+            .job-card-right { width: 100%; justify-content: space-between; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="announcement">
+    <strong>MINISTERIAL NOTICE:</strong>&nbsp; New Renewable Energy Transition Act effective 1 June 2026 
+</div>
+
+<nav>
+    <div class="nav-inner">
+        <a class="logo-block" href="#">
+            <div class="logo-seal">⚡</div>
+            <div class="logo-text">
+                <span class="org">Nexus Energy Authority</span>
+                <span class="sub">Department of Energy &amp; Climate · Est. 1948</span>
+            </div>
+        </a>
+        <ul>
+            <li><a href="#programmes">Programmes</a></li>
+            <li><a href="#energy-mix">Energy Mix</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#careers">Careers</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div>
+            <div class="hero-label">
+                <div class="dot"></div>
+                <span>Nexus Energy Authority — 2026</span>
+            </div>
+            <h1>Securing a <em>clean, reliable</em> energy future for all</h1>
+            <p>The Nexus Energy Authority oversees the generation, distribution, and regulation of energy across the nation — ensuring affordable, sustainable, and secure power for every household and business.</p>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-block">
+                <span class="stat-icon">⚡</span>
+                <div class="stat-num">98.7%</div>
+                <div class="stat-label">National Grid Uptime</div>
+            </div>
+            <div class="stat-block">
+                <span class="stat-icon">🌿</span>
+                <div class="stat-num green">47%</div>
+                <div class="stat-label">Renewable Share 2025</div>
+            </div>
+            <div class="stat-block">
+                <span class="stat-icon">🏠</span>
+                <div class="stat-num">32M</div>
+                <div class="stat-label">Households Served</div>
+            </div>
+            <div class="stat-block">
+                <span class="stat-icon">📉</span>
+                <div class="stat-num green">−34%</div>
+                <div class="stat-label">Carbon vs 2010</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="alert-banner">
+    <div class="alert-inner">
+        <div class="alert-badge">⚠ Advisory</div>
+        <p class="alert-text"><strong>Winter Demand Alert (North Region):</strong> Elevated demand forecast 18:00–21:00 this week. Citizens are encouraged to shift non-essential usage to off-peak hours.</p>
+    </div>
+</div>
+
+<section id="programmes" class="section programmes">
+    <div class="section-inner">
+        <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Programmes &amp; Initiatives</span></div>
+        <h2 class="section-title">Programmes built for the nation</h2>
+        <p class="section-sub">From citizen subsidies to industrial decarbonisation, our programmes address every dimension of the energy transition.</p>
+        <div class="prog-grid">
+            <div class="prog-card">
+                <div class="prog-num">01</div>
+                <span class="prog-icon">☀️</span>
+                <h3 class="prog-title">Residential Solar Subsidy Scheme</h3>
+                <p class="prog-desc">Grants covering up to 40% of rooftop solar installation costs for qualifying households, paired with low-interest government finance.</p>
+            </div>
+            <div class="prog-card">
+                <div class="prog-num">02</div>
+                <span class="prog-icon">🏭</span>
+                <h3 class="prog-title">Industrial Decarbonisation Fund</h3>
+                <p class="prog-desc">€4.2 billion ring-fenced for heavy industry retrofits: hydrogen-ready boilers, electrification of heat, and carbon capture pilot projects.</p>
+            </div>
+            <div class="prog-card">
+                <div class="prog-num">03</div>
+                <span class="prog-icon">🔋</span>
+                <h3 class="prog-title">Community Battery Storage</h3>
+                <p class="prog-desc">Grid-scale battery installations in 200 communities nationwide, stabilising local supply and reducing peak import costs by an estimated 22%.</p>
+            </div>
+            <div class="prog-card">
+                <div class="prog-num">04</div>
+                <span class="prog-icon">🌬️</span>
+                <h3 class="prog-title">Offshore Wind Expansion</h3>
+                <p class="prog-desc">Licensing and co-investment in 18 GW of new offshore wind capacity by 2030, supporting 85,000 new green jobs in coastal regions.</p>
+            </div>
+            <div class="prog-card">
+                <div class="prog-num">05</div>
+                <span class="prog-icon">🏘️</span>
+                <h3 class="prog-title">Fuel Poverty Alleviation Grant</h3>
+                <p class="prog-desc">Targeted support for low-income households: insulation upgrades, heat pump installations, and energy literacy workshops at no cost.</p>
+            </div>
+            <div class="prog-card">
+                <div class="prog-num">06</div>
+                <span class="prog-icon">⚛️</span>
+                <h3 class="prog-title">Next-Generation Nuclear Research</h3>
+                <p class="prog-desc">Funding for small modular reactor (SMR) technology development and site assessment at the forefront of 4th-generation nuclear.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="energy-mix" class="section energy-mix">
+    <div class="section-inner">
+        <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">National Energy Mix · 2025 Data</span></div>
+        <h2 class="section-title">Where our power comes from</h2>
+        <div class="mix-layout">
+            <div class="mix-bars">
+                <div class="mix-bar-row">
+                    <div class="mix-bar-label"><span>🌬️</span> Wind</div>
+                    <div class="mix-bar-track"><div class="mix-bar-fill" style="--target-width:38%; background:#22a35e;"></div></div>
+                    <div class="mix-bar-pct">38%</div>
+                </div>
+                <div class="mix-bar-row">
+                    <div class="mix-bar-label"><span>☀️</span> Solar</div>
+                    <div class="mix-bar-track"><div class="mix-bar-fill" style="--target-width:21%; background:#f59e0b;"></div></div>
+                    <div class="mix-bar-pct">21%</div>
+                </div>
+                <div class="mix-bar-row">
+                    <div class="mix-bar-label"><span>💧</span> Hydro</div>
+                    <div class="mix-bar-track"><div class="mix-bar-fill" style="--target-width:14%; background:#3b82f6;"></div></div>
+                    <div class="mix-bar-pct">14%</div>
+                </div>
+                <div class="mix-bar-row">
+                    <div class="mix-bar-label"><span>⚛️</span> Nuclear</div>
+                    <div class="mix-bar-track"><div class="mix-bar-fill" style="--target-width:17%; background:#8b5cf6;"></div></div>
+                    <div class="mix-bar-pct">17%</div>
+                </div>
+                <div class="mix-bar-row">
+                    <div class="mix-bar-label"><span>🔥</span> Gas</div>
+                    <div class="mix-bar-track"><div class="mix-bar-fill" style="--target-width:7%; background:#f97316;"></div></div>
+                    <div class="mix-bar-pct">7%</div>
+                </div>
+                <div class="mix-bar-row">
+                    <div class="mix-bar-label"><span>🌲</span> Biomass</div>
+                    <div class="mix-bar-track"><div class="mix-bar-fill" style="--target-width:3%; background:#84cc16;"></div></div>
+                    <div class="mix-bar-pct">3%</div>
+                </div>
+            </div>
+            <div class="mix-info">
+                <div class="mix-info-title">On track for our 2030 net-zero target</div>
+                <p>Since 2015, we have reduced coal generation from 31% to 0%, accelerated wind and solar deployment, and invested in grid flexibility infrastructure that supports intermittent renewables at scale.</p>
+                <p>Our 2026–2030 National Energy Plan sets out the pathway to eliminate fossil fuel generation from the grid entirely, backed by a €28 billion public investment programme.</p>
+                <div class="mix-target">
+                    <div class="mix-target-num">80%</div>
+                    <div class="mix-target-text"><strong>2030 target</strong><br>Renewable share of national electricity generation, as mandated by the Clean Energy Act 2023.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="news" class="section news">
+    <div class="section-inner">
+        <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">News &amp; Announcements</span></div>
+        <h2 class="section-title">Latest from the Authority</h2>
+        <div class="news-grid">
+            <div class="news-main">
+                <div class="news-main-img">
+                    <div class="news-img-icon">🌬️</div>
+                    <span class="news-category">Major Announcement</span>
+                </div>
+                <div class="news-main-body">
+                    <h3>Government approves 6 GW North Sea offshore wind project — largest in national history</h3>
+                    <p>The Cabinet has given final approval for the Meridian Wind Array, a 6-gigawatt offshore wind development 80 km off the northern coast. Construction begins Q3 2026, with first power expected in 2029, supplying clean electricity to an estimated 5.2 million homes.</p>
+                    <div class="news-meta"><span>24 April 2026</span><span>Press Office</span></div>
+                </div>
+            </div>
+            <div class="news-sidebar">
+                <div class="news-item">
+                    <div class="news-item-cat">Policy</div>
+                    <h4>Revised smart meter rollout schedule published for 2026–2028</h4>
+                    <div class="news-item-date">22 April 2026</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-item-cat">Consultation</div>
+                    <h4>Public consultation opens: proposed carbon pricing amendments</h4>
+                    <div class="news-item-date">18 April 2026</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-item-cat">Report</div>
+                    <h4>Q1 2026 Grid Performance Report: record 72-hour renewable streak</h4>
+                    <div class="news-item-date">14 April 2026</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-item-cat">Funding</div>
+                    <h4>€850M awarded to regional hydrogen pilot clusters</h4>
+                    <div class="news-item-date">9 April 2026</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section testimonials">
+    <div class="section-inner">
+        <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Public Feedback</span></div>
+        <h2 class="section-title">Loved by millions</h2>
+        <div class="t-grid">
+            <div class="t-card">
+                <div class="t-stars">★★★★★</div>
+                <p class="t-quote">"The solar subsidy application was straightforward and the grant arrived within 6 weeks. My bills have dropped by €80 a month."</p>
+                <div class="t-author"><div class="t-avatar">KM</div><div><div class="t-name">Katharina Meier</div><div class="t-role">Homeowner · Southwest Region</div></div></div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">★★★★★</div>
+                <p class="t-quote">"The Industrial Decarbonisation Fund gave us the confidence to invest in electrification now. The support team was expert and responsive."</p>
+                <div class="t-author"><div class="t-avatar">TP</div><div><div class="t-name">Thomas Patel</div><div class="t-role">Managing Director · Midlands Engineering Ltd</div></div></div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">★★★★★</div>
+                <p class="t-quote">"The real-time grid data portal is exceptional for our energy research. Government transparency at this level makes rigorous independent analysis actually possible."</p>
+                <div class="t-author"><div class="t-avatar">SF</div><div><div class="t-name">Dr. Sara Fernandez</div><div class="t-role">Energy Researcher · National University</div></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Join 32 million already connected</h2>
+    <p>The Nexus Energy Authority — powering the nation's clean energy future.</p>
+</section>
+
+<section id="careers" class="section careers">
+    <div class="section-inner">
+        <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Civil Service Vacancies</span></div>
+        <h2 class="section-title">Join our team</h2>
+        <p class="section-sub">We're building the network of the future — and we need exceptional people to do it. Explore open roles and grow your career at Nexus.</p>
+        <div class="jobs-list">
+            <div class="job-card" onclick="openJobModal()">
+                <div class="job-card-left">
+                    <div class="job-icon">🤝</div>
+                    <div class="job-info">
+                        <h4>Operations Specialist – Customer Platforms</h4>
+                        <div class="job-meta">
+                            <span class="job-tag highlight">Customer Experience</span>
+                            <span class="job-tag">Remote / Hybrid</span>
+                            <span class="job-tag">Full-Time</span>
+                            <span class="job-tag">Posted April 2026</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="job-card-right">
+                    <span class="job-salary">€55k – €70k</span>
+                    <button class="btn-view-job">View role →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JOB MODAL -->
+<div class="modal-overlay" id="jobModal" onclick="handleOverlayClick(event)">
+    <div class="modal-box">
+        <div class="modal-head">
+            <div>
+                <h3>Operations Specialist – Customer Platforms</h3>
+                <p>Customer Experience · Remote / Hybrid · Full-Time</p>
+            </div>
+            <button class="modal-close-btn" onclick="closeJobModal()">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-section">
+                <h4>About the Role</h4>
+                <p>Nexus Energy Authority is looking for a talented <strong>Operations Specialist</strong> to join our growing Customer Experience team. You will own the day-to-day management of our customer platform stack, drive data quality initiatives, and work cross-functionally with Sales, Marketing, and Customer Success to optimise the full customer lifecycle.</p>
+            </div>
+            <div class="modal-section">
+                <h4>Key Responsibilities</h4>
+                <ul>
+                    <li>Manage and maintain our customer engagement platform, ensuring data integrity and system health</li>
+                    <li>Design, build, and optimise automated workflows, sequences, and lifecycle campaigns</li>
+                    <li>Partner with Sales &amp; Marketing to segment audiences and execute targeted outreach programmes</li>
+                    <li>Create dashboards and reports that surface actionable insights to senior stakeholders</li>
+                    <li>Identify gaps in operational processes and lead continuous improvement initiatives</li>
+                    <li>Conduct platform training sessions and produce documentation for internal teams</li>
+                    <li>Ensure compliance with GDPR and data governance policies across all customer data activities</li>
+                    <li>Evaluate and integrate third-party tools and data sources to enrich our platform ecosystem</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h4>What We're Looking For</h4>
+                <ul>
+                    <li>3+ years of hands-on experience with customer engagement or operations platforms (Salesforce, HubSpot, or similar preferred)</li>
+                    <li>Strong understanding of B2C and B2B sales pipelines and customer lifecycle management</li>
+                    <li>Proficiency in automation tools, email marketing platforms, and basic SQL or data tools</li>
+                    <li>Analytical mindset — comfortable working with large datasets and translating data into clear insights</li>
+                    <li>Excellent communication skills in English; additional European languages are a strong plus</li>
+                    <li>Familiarity with GDPR compliance requirements and best practices for data management</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h4>Nice to Have</h4>
+                <ul>
+                    <li>Platform certifications (Salesforce Administrator, HubSpot, or equivalent)</li>
+                    <li>Experience with CDP platforms (e.g. Segment, Tealium) or marketing automation suites</li>
+                    <li>Background in subscription-based or energy/utilities businesses</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h4>What Nexus Offers</h4>
+                <ul>
+                    <li>Remote-first culture with flexible working</li>
+                    <li>€1,500/yr learning budget</li>
+                    <li>Private health insurance</li>
+                    <li>30 days paid leave</li>
+                    <li>Equity &amp; performance bonus</li>
+                    <li>Home office stipend</li>
+                    <li>Dedicated career mentor</li>
+                </ul>
+            </div>
+            <div class="modal-apply">
+                <h3>Ready to apply?</h3>
+                <p>Send your CV and a short cover note with the subject line <strong>"Operations Specialist – Customer Platforms"</strong>.</p>
+                <a href="mailto:careers@nexus.htb" class="apply-email">Apply at careers@nexus.htb</a>
+                <p class="hiring-manager">Questions? Reach out to our hiring manager: <a href="mailto:j.matthew@nexus.htb">j.matthew@nexus.htb</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-top">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="f-org">Nexus Energy Authority</div>
+                <span class="f-sub">Department of Energy &amp; Climate</span>
+                <p>A statutory body responsible for the security, affordability, and decarbonisation of the nation's energy supply.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Programmes</h5>
+                <ul>
+                    <li><a href="#programmes">Solar Subsidy Scheme</a></li>
+                    <li><a href="#programmes">Industrial Fund</a></li>
+                    <li><a href="#programmes">Community Batteries</a></li>
+                    <li><a href="#programmes">Fuel Poverty Support</a></li>
+                    <li><a href="#programmes">Nuclear Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Energy Mix</h5>
+                <ul>
+                    <li><a href="#energy-mix">Wind</a></li>
+                    <li><a href="#energy-mix">Solar</a></li>
+                    <li><a href="#energy-mix">Hydro</a></li>
+                    <li><a href="#energy-mix">Nuclear</a></li>
+                    <li><a href="#energy-mix">2030 Target</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>News</h5>
+                <ul>
+                    <li><a href="#news">Announcements</a></li>
+                    <li><a href="#news">Policy Updates</a></li>
+                    <li><a href="#news">Reports</a></li>
+                    <li><a href="#news">Consultations</a></li>
+                    <li><a href="#news">Funding</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Authority</h5>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#">Press Enquiries</a></li>
+                    <li><a href="#">Freedom of Information</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Nexus Energy Authority. Crown Copyright. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Notice</a>
+            <a href="#">Cookies</a>
+            <a href="#">Terms of Use</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function openJobModal() {
+        document.getElementById('jobModal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeJobModal() {
+        document.getElementById('jobModal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    function handleOverlayClick(e) {
+        if (e.target === document.getElementById('jobModal')) closeJobModal();
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeJobModal(); });
+</script>
+</body>
+</html>
+

@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1694,
+    "title": "Imported: http://127.0.0.1:8000/healthz",
+    "source_url": "http://127.0.0.1:8000/healthz",
+    "status": "draft",
+    "created_at": "2026-08-25T05:02:47.565530Z",
+    "content_preview": "{\"status\":\"ok\"}"
+  },
+  {
+    "id": 1695,
+    "title": "Imported: http://[0:0:0:0:0:ffff:127.0.0.1]:8000/healthz",
+    "source_url": "http://[0:0:0:0:0:ffff:127.0.0.1]:8000/healthz",
+    "status": "draft",
+    "created_at": "2026-08-25T05:02:49.611493Z",
+    "content_preview": "{\"status\":\"ok\"}"
+  },
+  {
+    "id": 1696,
+    "title": "Imported: http://backend:8000/",
+    "source_url": "http://backend:8000/",
+    "status": "draft",
+    "created_at": "2026-08-25T05:22:46.326253Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1697,
+    "title": "Imported: http://backend:8000/healthz",
+    "source_url": "http://backend:8000/healthz",
+    "status": "draft",
+    "created_at": "2026-08-25T05:23:46.086506Z",
+    "content_preview": "{\"status\":\"ok\"}"
+  },
+  {
+    "id": 1698,
+    "title": "Imported: http://backend:8000/docs",
+    "source_url": "http://backend:8000/docs",
+    "status": "draft",
+    "created_at": "2026-08-25T05:23:48.050807Z",
+    "content_preview": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm"
+  },
+  {
+    "id": 1699,
+    "title": "Imported: http://backend:8000/openapi.json",
+    "source_url": "http://backend:8000/openapi.json",
+    "status": "draft",
+    "created_at": "2026-08-25T05:23:50.566424Z",
+    "content_preview": "{\"openapi\":\"3.1.0\",\"info\":{\"title\":\"redlab reporting/billing service\",\"version\":\"0.1.0\"},\"paths\":{\"/reports\":{\"get\":{\"su"
+  },
+  {
+    "id": 1700,
+    "title": "Imported: http://127.0.0.1:8000/metrics",
+    "source_url": "http://127.0.0.1:8000/metrics",
+    "status": "draft",
+    "created_at": "2026-08-25T05:23:53.726102Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1701,
+    "title": "Imported: http://localhost:8000/admin",
+    "source_url": "http://localhost:8000/admin",
+    "status": "draft",
+    "created_at": "2026-08-25T05:23:56.286289Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1702,
+    "title": "Imported: http://localhost:8000/api",
+    "source_url": "http://localhost:8000/api",
+    "status": "draft",
+    "created_at": "2026-08-25T05:23:58.966516Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1703,
+    "title": "Imported: http://backend:8000/.env",
+    "source_url": "http://backend:8000/.env",
+    "status": "draft",
+    "created_at": "2026-08-25T05:25:07.405598Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1704,
+    "title": "Imported: http://backend:8000/config.yaml",
+    "source_url": "http://backend:8000/config.yaml",
+    "status": "draft",
+    "created_at": "2026-08-25T05:25:09.446328Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1705,
+    "title": "Imported: http://backend:8000/settings.json",
+    "source_url": "http://backend:8000/settings.json",
+    "status": "draft",
+    "created_at": "2026-08-25T05:25:11.246614Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1706,
+    "title": "Imported: http://127.0.0.1:8000/.env",
+    "source_url": "http://127.0.0.1:8000/.env",
+    "status": "draft",
+    "created_at": "2026-08-25T05:25:13.165578Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1707,
+    "title": "Imported: http://127.0.0.1:8000/app.py",
+    "source_url": "http://127.0.0.1:8000/app.py",
+    "status": "draft",
+    "created_at": "2026-08-25T05:25:15.325626Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1708,
+    "title": "Imported: http://127.0.0.1:8000/main.py",
+    "source_url": "http://127.0.0.1:8000/main.py",
+    "status": "draft",
+    "created_at": "2026-08-25T05:25:17.286045Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1710,
+    "title": "stage2",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:06.093626Z",
+    "content_preview": "test"
+  },
+  {
+    "id": 1711,
+    "title": "flag",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:06.853957Z",
+    "content_preview": "test"
+  },
+  {
+    "id": 1712,
+    "title": "secret",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:07.448072Z",
+    "content_preview": "test"
+  },
+  {
+    "id": 1713,
+    "title": "snojc",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:08.133475Z",
+    "content_preview": "test"
+  },
+  {
+    "id": 1714,
+    "title": "redlab",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:08.772781Z",
+    "content_preview": "test"
+  },
+  {
+    "id": 1715,
+    "title": "tenants-of-record",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:09.413546Z",
+    "content_preview": "test"
+  },
+  {
+    "id": 1716,
+    "title": "Manifest for snojc-systems-6104",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:11.693433Z",
+    "content_preview": "snojc-systems-6104"
+  },
+  {
+    "id": 1717,
+    "title": "Manifest for snojc-corp-7731",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:12.013586Z",
+    "content_preview": "snojc-corp-7731"
+  },
+  {
+    "id": 1718,
+    "title": "Special",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:39.653117Z",
+    "content_preview": "6104-9915-7731-2286-4402-5538"
+  },
+  {
+    "id": 1719,
+    "title": "Special",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:41.093810Z",
+    "content_preview": "STCDLC"
+  },
+  {
+    "id": 1720,
+    "title": "Special",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:41.453628Z",
+    "content_preview": "snojc-manifest"
+  },
+  {
+    "id": 1721,
+    "title": "Special",
+    "source_url": null,
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:41.813701Z",
+    "content_preview": "tenants:6104,9915,7731,2286,4402,5538"
+  },
+  {
+    "id": 1722,
+    "title": "Imported: http://backend:8000/manifest",
+    "source_url": "http://backend:8000/manifest",
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:46.693964Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1723,
+    "title": "Imported: http://127.0.0.1:8000/manifest",
+    "source_url": "http://127.0.0.1:8000/manifest",
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:48.012872Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1724,
+    "title": "Imported: http://localhost:8000/manifest",
+    "source_url": "http://localhost:8000/manifest",
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:49.892900Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1725,
+    "title": "Imported: http://backend:8000/api/manifest",
+    "source_url": "http://backend:8000/api/manifest",
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:51.373756Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1726,
+    "title": "Imported: http://backend:8000/tenants/manifest",
+    "source_url": "http://backend:8000/tenants/manifest",
+    "status": "draft",
+    "created_at": "2026-08-25T05:37:52.973210Z",
+    "content_preview": "{\"detail\":\"Not Found\"}"
+  },
+  {
+    "id": 1727,
+    "title": "Imported: http://backend:8000/billing/tenants",
+    "source_url": "http://backend:8000/billing/tenants",
+    "status": "draft",
+    "created_at": "2026-08-25T06:56:00.456233Z",
+    "content_preview": "[{\"tenant_id\":\"atlas-3308\",\"plan\":\"pro\",\"mrr_krw\":3100000,\"status\":\"active\"},{\"tenant_id\":\"bluesky-1102\",\"plan\":\"standar"
+  },
+  {
+    "id": 1728,
+    "title": "Imported: http://backend:8000/billing/tenants",
+    "source_url": "http://backend:8000/billing/tenants",
+    "status": "draft",
+    "created_at": "2026-08-25T07:00:06.987139Z",
+    "content_preview": "[{\"tenant_id\":\"atlas-3308\",\"plan\":\"pro\",\"mrr_krw\":3100000,\"status\":\"active\"},{\"tenant_id\":\"bluesky-1102\",\"plan\":\"standar"
+  },
+  {
+    "id": 1729,
+    "title": "Imported: http://0.0.0.0:8000/reports",
+    "source_url": "http://0.0.0.0:8000/reports",
+    "status": "draft",
+    "created_at": "2026-08-25T07:01:43.344027Z",
+    "content_preview": "[{\"id\":1728,\"title\":\"Imported: http://backend:8000/billing/tenants\",\"source_url\":\"http://backend:8000/billing/tenants\",\""
+  }
+]

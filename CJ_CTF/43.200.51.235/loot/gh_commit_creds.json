@@ -1,0 +1,61 @@
+{
+  "sha": "291794deec964d50d0361b927429244d605b4999",
+  "node_id": "C_kwDOT3HgMtoAKDI5MTc5NGRlZWM5NjRkNTBkMDM2MWI5Mjc0MjkyNDRkNjA1YjQ5OTk",
+  "commit": {
+    "author": {
+      "name": "drkim-dev",
+      "email": "drkim@example.com",
+      "date": "2026-08-16T13:08:27Z"
+    },
+    "committer": {
+      "name": "drkim-dev",
+      "email": "drkim@example.com",
+      "date": "2026-08-16T13:08:27Z"
+    },
+    "message": "notes: temp testing creds",
+    "tree": {
+      "sha": "adae18e586cd6a5b6943eaac50ce885d698ad709",
+      "url": "https://api.github.com/repos/drkim-dev/private-test/git/trees/adae18e586cd6a5b6943eaac50ce885d698ad709"
+    },
+    "url": "https://api.github.com/repos/drkim-dev/private-test/git/commits/291794deec964d50d0361b927429244d605b4999",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/drkim-dev/private-test/commits/291794deec964d50d0361b927429244d605b4999",
+  "html_url": "https://github.com/drkim-dev/private-test/commit/291794deec964d50d0361b927429244d605b4999",
+  "comments_url": "https://api.github.com/repos/drkim-dev/private-test/commits/291794deec964d50d0361b927429244d605b4999/comments",
+  "author": null,
+  "committer": null,
+  "parents": [
+    {
+      "sha": "90ebf0f690322d1627b137e748fa4f52f07e50fb",
+      "url": "https://api.github.com/repos/drkim-dev/private-test/commits/90ebf0f690322d1627b137e748fa4f52f07e50fb",
+      "html_url": "https://github.com/drkim-dev/private-test/commit/90ebf0f690322d1627b137e748fa4f52f07e50fb"
+    }
+  ],
+  "stats": {
+    "total": 4,
+    "additions": 4,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "dbc0c4533416fc3f093a9d1dc11ce6f5dd817522",
+      "filename": "notes.txt",
+      "status": "added",
+      "additions": 4,
+      "deletions": 0,
+      "changes": 4,
+      "blob_url": "https://github.com/drkim-dev/private-test/blob/291794deec964d50d0361b927429244d605b4999/notes.txt",
+      "raw_url": "https://github.com/drkim-dev/private-test/raw/291794deec964d50d0361b927429244d605b4999/notes.txt",
+      "contents_url": "https://api.github.com/repos/drkim-dev/private-test/contents/notes.txt?ref=291794deec964d50d0361b927429244d605b4999",
+      "patch": "@@ -0,0 +1,4 @@\n+temp testing creds (delete before prod)\n+\n+internal relay auth header (legacy, may still work?):\n+  X-Node-Secret: relay-legacy-2023"
+    }
+  ]
+}

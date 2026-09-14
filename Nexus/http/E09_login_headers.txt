@@ -1,0 +1,11 @@
+HTTP/1.1 302 Found
+Server: nginx/1.24.0 (Ubuntu)
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: no-cache, private
+Date: Sun, 23 Aug 2026 05:46:00 GMT
+Location: http://billing.nexus.htb/admin/login
+Set-Cookie: XSRF-TOKEN=eyJpdiI6ImQ5OHprNGtaci9KSGFsTk1seWNtSmc9PSIsInZhbHVlIjoiODVFQmFQck53U0ZQenBUY1NGUUdGd1RRc2pEVEdSeFZFYkRpR3BaYng1N0dLbUg0c09JZnArb3IrODFjTUdKb3BCV1BYNmYyS1dWWmZOL1piRFd1WnlYamVuYVlSaHBYdkRTd2g0MWZwcExhWDhkVkJRdHNBM1J4NmJNM2dlM3AiLCJtYWMiOiI1OTkzMWIzYTM1ZWJmNzIwZTRmOGIyYTI0NDkxZTkyNWZjN2EwZmIxNWVlZjUxNzkxYzQ1NzJmYzE4Y2NmMDU2IiwidGFnIjoiIn0%3D; expires=Sun, 23 Aug 2026 07:46:00 GMT; Max-Age=7200; path=/; samesite=lax
+Set-Cookie: krayin_crm_session=eyJpdiI6InJtMXQyQTZKTGhWcXNTZmdMSGNja3c9PSIsInZhbHVlIjoiNXYzKzVEQUZkQkxGcGE4UitMTnp2Zk5lczF4d1loaU16SE4xeEswQ0NhNGhLdTkvU2t2cEtnTXdnNDVvbytDdXVpUGV1UTQzdzNKaDdCTEs2UHRlcWRtdE5Eek1hUi9lVldUVGdjdXgwbk1GNHFhYURKdWFxSWlwYkNCb3NHWUQiLCJtYWMiOiI1ZDI0NzM2NmQ2N2ZmMmY2YWE5MjFkNDNmZjJlMmRiNGJkNDZhM2ZjODJmMDdkOGYzMjNmYjUzZDU2YTNiNDViIiwidGFnIjoiIn0%3D; expires=Sun, 23 Aug 2026 07:46:00 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+

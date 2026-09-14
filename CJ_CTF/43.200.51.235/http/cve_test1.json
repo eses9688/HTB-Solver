@@ -1,0 +1,10 @@
+{
+  "queries": [
+    {
+      "refId": "A",
+      "datasource": {"type": "__expr__", "uid": "__expr__"},
+      "type": "sql",
+      "expression": "SELECT 1 as test"
+    }
+  ]
+}

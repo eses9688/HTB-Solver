@@ -1,0 +1,406 @@
+    <!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+
+    <title>500 Internal Server Error</title>
+
+    <style type="text/css">
+/* reset */
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,pre,a,code,em,img,strong,b,i,ul,li{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+body{
+    line-height: 1;
+}
+ul{
+    list-style: none;
+}
+
+/* base */
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+h1,h2,h3,p,img,ul li{
+    font-family: Arial,sans-serif;
+    color: #505050;
+}
+/*corresponds to min-width of 860px for some elements (.header .footer .element ...)*/
+@media screen and (min-width: 960px) {
+    html,body{
+        overflow-x: hidden;
+    }
+}
+
+/* header */
+.header{
+    min-width: 860px; /* 960px - 50px * 2 */
+    margin: 0 auto;
+    background: #f3f3f3;
+    padding: 40px 50px 30px 50px;
+    border-bottom: #ccc 1px solid;
+}
+.header h1{
+    font-size: 30px;
+    color: #e57373;
+    margin-bottom: 30px;
+}
+.header h1 span, .header h1 span a{
+    color: #e51717;
+}
+.header h1 a{
+    color: #e57373;
+}
+.header h1 a:hover{
+    color: #e51717;
+}
+.header img.erroricon{
+    float: right;
+    margin-top: -15px;
+    margin-left: 50px;
+}
+.header .tools{
+    float: right;
+}
+.header .tools a {
+    border-radius: 5px;
+    width: 25px;
+    text-align: center;
+    margin-right: 7px;
+}
+.header .tools a,
+.header .tools span{
+    display: block;
+    float: left;
+    height: 25px;
+    padding: 5px;
+}
+.header .tools span{
+    display: none;
+}
+.header .tools a:hover{
+    background: #fff;
+    text-decoration: none;
+}
+.header .tools a:active img{
+    position: relative;
+    left: 2px;
+    top: 2px;
+}
+.header .tools textarea{
+    position: absolute;
+    top: -500px;
+    right: 300px;
+    width: 750px;
+    height: 150px;
+}
+.header h2{
+    font-size: 20px;
+    line-height: 1.25;
+}
+.header pre{
+    margin: 10px 0;
+    overflow-y: scroll;
+    font-family: Courier, monospace;
+    font-size: 14px;
+}
+
+/* previous exceptions */
+.header .previous{
+    margin: 20px 0;
+    padding-left: 30px;
+}
+.header .previous div{
+    margin: 20px 0;
+}
+.header .previous .arrow{
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(mirror=1);
+    font-size: 26px;
+    position: absolute;
+    margin-top: -3px;
+    margin-left: -30px;
+    color: #e51717;
+}
+.header .previous h2{
+    font-size: 20px;
+    color: #e57373;
+    margin-bottom: 10px;
+}
+.header .previous h2 span{
+    color: #e51717;
+}
+.header .previous h2 a{
+    color: #e57373;
+}
+.header .previous h2 a:hover{
+    color: #e51717;
+}
+.header .previous h3{
+    font-size: 14px;
+    margin: 10px 0;
+}
+.header .previous p{
+    font-size: 14px;
+    color: #aaa;
+}
+.header .previous pre{
+    font-family: Courier, monospace;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* call stack */
+.call-stack{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.call-stack ul li{
+    margin: 1px 0;
+}
+.call-stack ul li .element-wrap{
+    cursor: pointer;
+    padding: 15px 0;
+    background-color: #fdfdfd;
+}
+.call-stack ul li.application .element-wrap{
+    background-color: #fafafa;
+}
+.call-stack ul li .element-wrap:hover{
+    background-color: #edf9ff;
+}
+.call-stack ul li .element{
+    min-width: 860px; /* 960px - 50px * 2 */
+    margin: 0 auto;
+    padding: 0 50px;
+    position: relative;
+}
+.call-stack ul li a{
+    color: #505050;
+}
+.call-stack ul li a:hover{
+    color: #000;
+}
+.call-stack ul li .item-number{
+    width: 45px;
+    display: inline-block;
+}
+.call-stack ul li .text{
+    color: #aaa;
+}
+.call-stack ul li.application .text{
+    color: #505050;
+}
+.call-stack ul li .at{
+    float: right;
+    display: inline-block;
+    width: 7em;
+    padding-left: 1em;
+    text-align: left;
+    color: #aaa;
+}
+.call-stack ul li.application .at{
+    color: #505050;
+}
+.call-stack ul li .line{
+    display: inline-block;
+    width: 3em;
+    text-align: right;
+}
+.call-stack ul li .code-wrap{
+    display: none;
+    position: relative;
+}
+.call-stack ul li.application .code-wrap{
+    display: block;
+}
+.call-stack ul li .error-line,
+.call-stack ul li .hover-line{
+    background-color: #ffebeb;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    margin-top: 0;
+}
+.call-stack ul li .hover-line{
+    background: none;
+}
+.call-stack ul li .hover-line.hover,
+.call-stack ul li .hover-line:hover{
+    background: #edf9ff !important;
+}
+.call-stack ul li .code{
+    min-width: 860px; /* 960px - 50px * 2 */
+    margin: 15px auto;
+    padding: 0 50px;
+    position: relative;
+}
+.call-stack ul li .code .lines-item{
+    position: absolute;
+    z-index: 200;
+    display: block;
+    width: 25px;
+    text-align: right;
+    color: #aaa;
+    line-height: 20px;
+    font-size: 12px;
+    margin-top: 1px;
+    font-family: Consolas, monospace;
+}
+.call-stack ul li .code pre{
+    position: relative;
+    z-index: 200;
+    left: 50px;
+    line-height: 20px;
+    font-size: 12px;
+    font-family: Consolas, monospace;
+    display: inline;
+}
+@-moz-document url-prefix() {
+    .call-stack ul li .code pre{
+        line-height: 20px;
+    }
+}
+
+/* request */
+.request{
+    background-color: #fafafa;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 1px;
+}
+.request .code{
+    min-width: 860px; /* 960px - 50px * 2 */
+    margin: 0 auto;
+    padding: 15px 50px;
+}
+.request .code pre{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: Consolas, monospace;
+    display: inline;
+    word-wrap: break-word;
+}
+
+/* footer */
+.footer{
+    position: relative;
+    height: 222px;
+    min-width: 860px; /* 960px - 50px * 2 */
+    padding: 0 50px;
+    margin: 1px auto 0 auto;
+}
+.footer p{
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+.footer p a{
+    color: #505050;
+}
+.footer p a:hover{
+    color: #000;
+}
+.footer .timestamp{
+    font-size: 14px;
+    padding-top: 67px;
+    margin-bottom: 28px;
+}
+.footer img{
+    position: absolute;
+    right: -50px;
+}
+
+/* highlight.js */
+.comment{
+    color: #808080;
+    font-style: italic;
+}
+.keyword{
+    color: #000080;
+}
+.number{
+    color: #00a;
+}
+.number{
+    font-weight: normal;
+}
+.string, .value{
+    color: #0a0;
+}
+.symbol, .char {
+    color: #505050;
+    background: #d0eded;
+    font-style: italic;
+}
+.phpdoc{
+    text-decoration: underline;
+}
+.variable{
+    color: #a00;
+}
+
+body pre {
+    pointer-events: none;
+}
+body.mousedown pre {
+    pointer-events: auto;
+}
+    </style>
+</head>
+
+<body>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none">
+        <symbol id="new-window" viewBox="0 0 24 24">
+            <g transform="scale(0.0234375 0.0234375)">
+                <path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z"></path>
+            </g>
+        </symbol>
+    </svg>
+
+    <div class="header">
+        <div class="tools">
+            <textarea id="clipboard">yii\base\InvalidConfigException: Class is not of type yii\base\Behavior or its subclasses in /var/www/html/craft/vendor/yiisoft/yii2/base/Component.php:198
+Stack trace:
+#0 /var/www/html/craft/vendor/craftcms/cms/src/helpers/App.php(1542): yii\base\Component-&gt;__set()
+#1 /var/www/html/craft/vendor/craftcms/cms/src/base/Model.php(81): craft\helpers\App::configure()
+#2 /var/www/html/craft/vendor/craftcms/cms/src/models/ImageTransform.php(136): craft\base\Model-&gt;__construct()
+#3 [internal function]: craft\models\ImageTransform-&gt;__construct()
+#4 /var/www/html/craft/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass-&gt;newInstanceArgs()
+#5 /var/www/html/craft/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container-&gt;build()
+#6 /var/www/html/craft/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container-&gt;get()
+#7 /var/www/html/craft/vendor/craftcms/cms/src/Craft.php(71): yii\BaseYii::createObject()
+#8 /var/www/html/craft/vendor/craftcms/cms/src/helpers/ImageTransforms.php(310): Craft::createObject()
+#9 /var/www/html/craft/vendor/craftcms/cms/src/controllers/AssetsController.php(1119): craft\helpers\ImageTransforms::normalizeTransform()
+#10 [internal function]: craft\controllers\AssetsController-&gt;actionGenerateTransform()
+#11 /var/www/html/craft/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array()
+#12 /var/www/html/craft/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction-&gt;runWithParams()
+#13 /var/www/html/craft/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller-&gt;runAction()
+#14 /var/www/html/craft/vendor/craftcms/cms/src/web/Application.php(361): yii\base\Module-&gt;runAction()
+#15 /var/www/html/craft/vendor/craftcms/cms/src/web/Application.php(660): craft\web\Application-&gt;runAction()
+#16 /var/www/html/craft/vendor/craftcms/cms/src/web/Application.php(323): craft\web\Application-&gt;_processActionRequest()
+#17 /var/www/html/craft/vendor/yiisoft/yii2/base/Application.php(384): craft\web\Application-&gt;handleRequest()
+#18 /var/www/html/craft/web/index.php(12): yii\base\Application-&gt;run()
+#19 {main}
+
+Next yii\web\ServerErrorHttpException: Image transform cannot be created. in /var/www/html/craft/vendor/craftcms/cms/src/controllers/AssetsController.php:1124
+Stack trace:
+#0 [internal function]: craft\controllers\AssetsController-&gt;actionGenerateTransform()
+#1 /var/www/html/craft/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array()
+#2 /var/www/html/craft/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction-&gt;runWithParams()
+#3 /var/www/html/craft/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller-&gt;runAction()
+#4 /var/www/html/craft/vendor/craftcms/cms/src/web/Application.php(361): yii\base\Module-&gt;runAction()
+#5 /var/www/html/craft/vendor/craftcms/cms/src/web/Application.php(660): craft\web\Application-&gt;runAction()
+#6 /var/ww

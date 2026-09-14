@@ -1,0 +1,41 @@
+명령: id; whoami; hostname; pwd  (프린터 잡 이름 커맨드 인젝션으로 획득한 리버스쉘 상에서 실행)
+
+uid=65534(nobody) gid=65534(nogroup) groups=65534(nogroup)
+nobody
+abducted
+/var/spool/samba
+
+명령: cat /etc/passwd (발췌)
+
+root:x:0:0:root:/root:/bin/bash
+...
+scott:x:1000:1001:Scott Mercer:/home/scott:/bin/bash
+marcus:x:1001:1002:Marcus Vale:/home/marcus:/bin/bash
+
+명령: cat /etc/group | grep -E "scott|marcus"
+
+operators:x:1000:marcus
+scott:x:1001:
+marcus:x:1002:
+
+명령: ls -la /srv/transfer /srv/projects
+
+ls: cannot open directory '/srv/projects': Permission denied
+/srv/transfer:
+total 8
+drwxr-xr-x 2 scott scott 4096 Oct  9  2025 .
+drwxr-xr-x 4 root  root  4096 Mar 31  2025 ..
+
+명령: ls -la /home
+
+total 16
+drwxr-xr-x  4 root   root   4096 Jun  4 13:41 .
+drwxr-xr-x 23 root   root   4096 Jun  4 13:41 ..
+drwxr-x---  3 marcus marcus 4096 Jun  4 13:47 marcus
+drwxr-x---  3 scott  scott  4096 Jun  4 13:47 scott
+
+명령: find / -iname "*rclone*" 2>/dev/null
+
+/var/lib/dpkg/info/rclone.md5sums
+/var/lib/dpkg/info/rclone.list
+/opt/offsite-backup/rclone.conf

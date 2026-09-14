@@ -1,0 +1,34 @@
+services:
+  portal:
+    build: ./console
+    container_name: es-devops-portal
+    restart: unless-stopped
+    ports:
+      - "443:5000"
+    networks:
+      - lab3-net
+      - internal-net-3
+
+  backend:
+    build: ./backend
+    container_name: es-automation-backend
+    restart: unless-stopped
+    networks:
+      internal-net-3:
+        aliases:
+          - automation-backend
+
+  imds-mock-v2:
+    build: ./imds-mock-v2
+    container_name: es-imds-mock-v2
+    restart: unless-stopped
+    networks:
+      internal-net-3:
+        aliases:
+          - imds-mock-v2
+
+networks:
+  lab3-net:
+    driver: bridge
+  internal-net-3:
+    driver: bridge

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" class="iframe">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Roundcube Webmail :: About</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0"><meta name="theme-color" content="#f4f4f4"><meta name="msapplication-navbutton-color" content="#f4f4f4">
+	<link rel="shortcut icon" href="skins/elastic/images/favicon.ico?s=1739004462">
+	<link rel="stylesheet" href="skins/elastic/deps/bootstrap.min.css?s=1739004467">
+	
+		<link rel="stylesheet" href="skins/elastic/styles/styles.min.css?s=1739004462">
+		
+	
+	
+		<script>
+		try {
+			if (document.cookie.indexOf('colorMode=dark') > -1
+				|| (document.cookie.indexOf('colorMode=light') === -1 && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.documentElement.className += ' dark-mode';
+			}
+		} catch (e) { }
+		</script>
+	
+<link rel="stylesheet" type="text/css" href="plugins/jqueryui/themes/elastic/jquery-ui.min.css?s=1739004462"><script src="program/js/jquery.min.js?s=1739004465"></script><script src="program/js/common.min.js?s=1739004462"></script><script src="program/js/app.min.js?s=1739004462"></script><script>
+/*
+        @licstart  The following is the entire license notice for the 
+        JavaScript code in this page.
+
+        Copyright (C) The Roundcube Dev Team
+
+        The JavaScript code in this page is free software: you can redistribute
+        it and/or modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation, either version 3 of
+        the License, or (at your option) any later version.
+
+        The code is distributed WITHOUT ANY WARRANTY; without even the implied
+        warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        See the GNU GPL for more details.
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+*/
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"settings","standard_windows":false,"locale":"en_US","devel_mode":null,"rcversion":10610,"cookie_domain":"","cookie_path":"/","cookie_secure":false,"dark_mode_support":true,"skin":"elastic","framed":true,"blankpage":"skins/elastic/watermark.html","refresh_interval":60,"session_lifetime":600,"action":"about","comm_path":"/?_task=settings&_framed=1","user_id":"TAr1E6nPybwOwfQ7","compose_extwin":false,"date_format":"yy-mm-dd","date_format_localized":"YYYY-MM-DD","request_token":"OzHOiZRv2MWIRpdardsl5I6DPzX4h5bD"});
+rcmail.add_label({"loading":"Loading...","servererror":"Server Error!","connerror":"Connection Error (Failed to reach the server)!","requesttimedout":"Request timed out","refreshing":"Refreshing...","windowopenerror":"The popup window was blocked!","uploadingmany":"Uploading files...","uploading":"Uploading file...","close":"Close","save":"Save","cancel":"Cancel","alerttitle":"Attention","confirmationtitle":"Are you sure...","delete":"Delete","continue":"Continue","ok":"OK","back":"Back","errortitle":"An error occurred!","options":"Options","plaintoggle":"Plain text","htmltoggle":"HTML","previous":"Previous","next":"Next","select":"Select","browse":"Browse","choosefile":"Choose file...","choosefiles":"Choose files..."});rcmail.gui_object('message', 'messagestack');
+</script>
+
+<script src="plugins/jqueryui/js/jquery-ui.min.js?s=1739004462"></script>
+</head>
+<body class="task-settings action-about">
+	
+
+
+<h1 class="voice">About</h1>
+
+<div class="frame-content">
+	
+	<h2 class="sysname">Roundcube Webmail 1.6.10</h2>
+	<p class="copyright">Copyright &copy; 2005-2025, The Roundcube Dev Team</p>
+	<p class="license">This program is free software; you can redistribute it and/or modify it under the terms of the <a href="https://www.gnu.org/licenses/gpl.html" target="_blank">GNU General Public License</a> as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br/>Some <a href="https://roundcube.net/license" target="_blank">exceptions</a> for skins &amp; plugins apply.</p>
+	<div class="readtext">
+		<h3>Installed plugins</h3>
+		<table id="pluginlist" class="records-table"><thead><tr><th class="name">Plugin</th><th class="version">Version</th><th class="license">License</th><th class="source">Source</th></tr></thead><tbody><tr><td class="name">archive</td><td class="version">3.5</td><td class="license"><a target="_blank" href="https://www.gnu.org/licenses/gpl.html">GPL-3.0+</a></td><td class="source"></td></tr><tr><td class="name">filesystem_attachments</td><td class="version">1.0</td><td class="license"><a target="_blank" href="https://www.gnu.org/licenses/gpl.html">GPL-3.0+</a></td><td class="source"></td></tr><tr><td class="name">jqueryui</td><td class="version">1.13.2</td><td class="license"><a target="_blank" href="https://www.gnu.org/licenses/gpl.html">GPL-3.0+</a></td><td class="source"></td></tr><tr><td class="name">zipdownload</td><td class="version">3.4</td><td class="license"><a target="_blank" href="https://www.gnu.org/licenses/gpl.html">GPL-3.0+</a></td><td class="source"></td></tr></tbody></table>
+	</div>
+</div>
+
+
+
+<div id="messagestack"></div>
+<script>
+$(function() {
+rcmail.init();
+});
+</script>
+
+
+
+<script src="skins/elastic/deps/bootstrap.bundle.min.js?s=1739004467"></script>
+<script src="skins/elastic/ui.min.js?s=1739004462"></script>
+
+</body>
+</html>

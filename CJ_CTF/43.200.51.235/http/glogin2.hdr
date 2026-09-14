@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 18 Aug 2026 05:40:24 GMT
+Content-Type: application/json
+Content-Length: 49
+Connection: keep-alive
+Cache-Control: no-store
+Set-Cookie: grafana_session=35c730425cf02fd2acd2d3c50e4fc112; Path=/grafana; Max-Age=2592000; HttpOnly; SameSite=Lax
+Set-Cookie: grafana_session_expiry=1787032219; Path=/grafana; Max-Age=2592000; SameSite=Lax
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Xss-Protection: 1; mode=block
+

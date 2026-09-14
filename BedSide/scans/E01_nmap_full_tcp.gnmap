@@ -1,0 +1,4 @@
+# Nmap 7.99 scan initiated Mon Aug 24 15:48:42 2026 as: /usr/lib/nmap/nmap -p- --min-rate 3000 -T4 -Pn -oA /home/kali/bedside/E01_nmap_full_tcp 10.129.248.191
+Host: 10.129.248.191 ()	Status: Up
+Host: 10.129.248.191 ()	Ports: 22/open/tcp//ssh///, 80/open/tcp//http///, 3000/filtered/tcp//ppp///	Ignored State: closed (65532)
+# Nmap done at Mon Aug 24 15:49:09 2026 -- 1 IP address (1 host up) scanned in 27.45 seconds

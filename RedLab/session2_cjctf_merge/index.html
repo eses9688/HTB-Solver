@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SNOJC Reports</title>
+    <style>
+      :root {
+        --navy: #0f2440;
+        --navy-2: #16325c;
+        --accent: #2563eb;
+        --bg: #eef2f7;
+        --card: #ffffff;
+        --text: #1e293b;
+        --muted: #64748b;
+        --border: #e2e8f0;
+        --ok: #16a34a;
+        --warn: #d97706;
+        --idle: #64748b;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+      /* header */
+      .topbar {
+        background: var(--navy);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        padding: 0 32px;
+        height: 58px;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+      }
+      .brand {
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+      .brand .mark {
+        background: var(--accent);
+        color: #fff;
+        width: 26px;
+        height: 26px;
+        border-radius: 6px;
+        display: grid;
+        place-items: center;
+        font-size: 14px;
+      }
+      .topbar nav { display: flex; gap: 22px; }
+      .topbar nav a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 13.5px;
+        font-weight: 500;
+        padding: 4px 0;
+      }
+      .topbar nav a:hover, .topbar nav a.active { color: #fff; }
+      .topbar .spacer { flex: 1; }
+      .topbar .user { color: #94a3b8; font-size: 13px; }
+      /* layout */
+      main { max-width: 1080px; margin: 28px auto 60px; padding: 0 32px; }
+      .page-title { font-size: 20px; font-weight: 650; margin: 4px 0 20px; }
+      .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px 22px;
+        margin-bottom: 20px;
+        box-shadow: 0 1px 2px rgba(15, 36, 64, 0.04);
+      }
+      .card h2 {
+        margin: 0 0 4px;
+        font-size: 14.5px;
+        font-weight: 650;
+        color: var(--navy);
+      }
+      .card .hint { margin: 0 0 16px; color: var(--muted); font-size: 12.5px; }
+      /* forms */
+      .field { display: flex; gap: 10px; }
+      input[type="text"], input:not([type]) {
+        flex: 1;
+        padding: 9px 12px;
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        font-size: 13.5px;
+        color: var(--text);
+        background: #fff;
+      }
+      input:focus { outline: 2px solid rgba(37, 99, 235, 0.25); border-color: var(--accent); }
+      button {
+        background: var(--accent);
+        color: #fff;
+        border: 0;
+        border-radius: 7px;
+        padding: 9px 16px;
+        font-size: 13.5px;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      button:hover { background: #1d4ed8; }
+      pre#importStatus {
+        margin: 14px 0 0;
+        background: #0f172a;
+        color: #e2e8f0;
+        border-radius: 8px;
+        padding: 12px 14px;
+        font: 12px/1.5 "SFMono-Regular", Menlo, Consolas, monospace;
+        max-height: 220px;
+        overflow: auto;
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+      pre#importStatus:empty { display: none; }
+      /* tables */
+      table { width: 100%; border-collapse: collapse; font-size: 13px; }
+      thead th {
+        text-align: left;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 11.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        padding: 0 12px 9px;
+        border-bottom: 1px solid var(--border);
+      }
+      tbody td { padding: 10px 12px; border-bottom: 1px solid #f1f5f9; }
+      tbody tr:last-child td { border-bottom: 0; }
+      tbody tr:hover { background: #f8fafc; }
+      td.num { text-align: right; font-variant-numeric: tabular-nums; }
+      .mono { font-family: "SFMono-Regular", Menlo, Consolas, monospace; font-size: 12.5px; color: #334155; }
+      td.empty { color: var(--muted); text-align: center; padding: 20px; }
+      .badge {
+        display: inline-block;
+        padding: 2px 9px;
+        border-radius: 999px;
+        font-size: 11.5px;
+        font-weight: 600;
+        background: #f1f5f9;
+        color: var(--idle);
+      }
+      .badge.active, .badge.published { background: #dcfce7; color: var(--ok); }
+      .badge.trialing, .badge.draft { background: #fef3c7; color: var(--warn); }
+      .badge.past_due, .badge.cancelled { background: #fee2e2; color: #dc2626; }
+      .card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+      .card-head h2 { margin: 0; }
+      .toolbtn {
+        background: transparent; color: var(--accent); border: 1px solid var(--border);
+        padding: 5px 11px; font-size: 12.5px; border-radius: 6px;
+      }
+      .toolbtn:hover { background: #f1f5f9; }
+      footer { color: var(--muted); font-size: 12px; text-align: center; padding: 20px; }
+      .toast {
+        position: fixed; right: 22px; bottom: 22px; background: var(--navy); color: #fff;
+        padding: 11px 16px; border-radius: 8px; font-size: 13px; opacity: 0; transform: translateY(8px);
+        transition: all 0.2s; pointer-events: none; box-shadow: 0 6px 20px rgba(15, 36, 64, 0.25);
+      }
+      .toast.show { opacity: 1; transform: translateY(0); }
+      .toast.err { background: #b91c1c; }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><span class="mark">S</span> SNOJC Reports</div>
+      <nav>
+        <a href="#reports" class="active">Reports</a>
+        <a href="#billing">Billing</a>
+        <a href="#import">Import</a>
+      </nav>
+      <span class="spacer"></span>
+      <span class="user">ops@snojc.internal</span>
+    </header>
+
+    <main>
+      <div class="page-title">Reports Portal</div>
+
+      <div class="grid">
+        <section class="card" id="create-card">
+          <h2>Create report</h2>
+          <p class="hint">Draft a new internal report entry.</p>
+          <div class="field">
+            <input id="title" type="text" placeholder="Report title" />
+            <button id="create">Create</button>
+          </div>
+        </section>
+
+        <section class="card" id="import">
+          <h2>Import report by URL</h2>
+          <p class="hint">Pull a report from an internal source URL.</p>
+          <div class="field">
+            <input id="url" type="text" placeholder="http://reports.internal/monthly.json" />
+            <button id="import-btn">Import</button>
+          </div>
+          <pre id="importStatus"></pre>
+        </section>
+      </div>
+
+      <section class="card" id="reports">
+        <div class="card-head">
+          <h2>Report list</h2>
+          <button class="toolbtn" id="refreshReports">Refresh</button>
+        </div>
+        <table>
+          <thead>
+            <tr><th style="width:70px">ID</th><th>Title</th><th style="width:110px">Status</th><th>Source</th></tr>
+          </thead>
+          <tbody id="reportRows"></tbody>
+        </table>
+      </section>
+
+      <section class="card" id="billing">
+        <div class="card-head">
+          <h2>Billing &mdash; tenants of record</h2>
+          <button class="toolbtn" id="refreshBilling">Refresh</button>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Tenant ID</th><th style="width:130px">Plan</th><th style="width:150px" class="num">MRR (KRW)</th><th style="width:110px">Status</th></tr>
+          </thead>
+          <tbody id="billingRows"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>SNOJC Internal Reporting &middot; confidential</footer>
+    <div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

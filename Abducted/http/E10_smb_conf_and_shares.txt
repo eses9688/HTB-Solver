@@ -1,0 +1,48 @@
+명령: cat /etc/samba/smb.conf (nobody 리버스쉘, /var/spool/samba)
+
+[global]
+   workgroup = WORKGROUP
+   server string = Hartley Group Document Services
+   netbios name = ABDUCTED
+   map to guest = Bad User
+   guest account = nobody
+   security = user
+   printing = sysv
+   load printers = no
+   disable spoolss = no
+   unix extensions = no
+   allow insecure wide links = yes
+   log level = 0
+   include = /etc/samba/shares.conf
+
+명령: cat /etc/samba/shares.conf
+
+[HP-Reception]
+   comment = Reception printer
+   path = /var/spool/samba
+   printable = yes
+   guest ok = yes
+   print command = /usr/local/bin/printaudit %J %s
+   lpq command = /bin/true
+   lprm command = /bin/true
+
+[projects]
+   comment = Hartley Group Project Files
+   path = /srv/projects
+   valid users = scott
+   read only = no
+   browseable = yes
+
+[transfer]
+   comment = Staff file transfer
+   path = /srv/transfer
+   valid users = scott
+   force user = marcus
+   read only = no
+   wide links = yes
+   browseable = yes
+
+명령: cat /usr/local/bin/printaudit
+
+#!/bin/sh
+echo "$(date '+%Y-%m-%d %H:%M:%S') job=$1" >> /var/log/printaudit.log

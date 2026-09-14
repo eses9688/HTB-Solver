@@ -1,0 +1,20 @@
+services:
+  grafana:
+    image: grafana/grafana:8.3.0
+    container_name: es-ops-grafana
+    restart: unless-stopped
+    user: "0"
+    environment:
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_AUTH_ANONYMOUS_ENABLED: "false"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./provisioning:/etc/grafana/provisioning:ro
+      - ./config/grafana.ini:/etc/grafana/grafana.ini:ro
+    networks:
+      - lab1-net
+
+networks:
+  lab1-net:
+    driver: bridge

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sign in - CJ Ops</title>
+  
+<style>
+  :root {
+    --cj-red:#d0284a; --cj-red-dark:#a91f3b; --cj-blue:#3d7dca; --cj-orange:#f2a25c;
+    --ink:#15171f; --muted:#6b7280; --bg:#fafafb; --card:#ffffff; --border:#e9e9ec;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); min-height:100vh; -webkit-font-smoothing:antialiased;
+  }
+  .topstripe { height:4px; background:linear-gradient(90deg, var(--cj-blue), var(--cj-red), var(--cj-orange)); }
+  header {
+    background:#fff; border-bottom:1px solid var(--border); padding:0 32px;
+    position:sticky; top:0; z-index:10;
+  }
+  .header-inner { max-width:920px; margin:0 auto; height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); }
+  .brandmark { display:block; }
+  .brand .wordmark { font-size:20px; font-weight:800; letter-spacing:-.03em; color:var(--ink); }
+  .brand .tag { font-size:12px; color:var(--muted); font-weight:600; padding-left:12px; margin-left:2px; border-left:1px solid var(--border); }
+  a.session {
+    color:var(--ink); font-size:13px; text-decoration:none; border:1px solid var(--border);
+    padding:8px 18px; border-radius:8px; font-weight:700; transition:all .15s ease; white-space:nowrap; background:#fff;
+  }
+  a.session:hover { border-color:var(--cj-red); color:var(--cj-red); }
+  main { max-width:920px; margin:0 auto; padding:44px 24px 60px; }
+  .page-title { font-size:32px; font-weight:800; letter-spacing:-.03em; margin:0 0 6px; }
+  .page-lead { color:var(--muted); font-size:15px; margin:0 0 32px; }
+  .grid-2 { display:grid; grid-template-columns:1fr; gap:18px; }
+  @media (min-width:680px) { .grid-2 { grid-template-columns:1fr 1fr; align-items:start; } }
+  .stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:14px; margin-bottom:20px; }
+  .stat-card {
+    background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .stat-card strong { display:block; font-size:14px; font-weight:700; }
+  .stat-card span.meta { margin-top:1px; }
+  .card {
+    background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px 26px;
+    margin-bottom:18px; transition:border-color .15s ease;
+  }
+  .card:hover { border-color:#d7d8dd; }
+  .card h2 { margin-top:0; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+  .status-row { display:flex; align-items:center; gap:10px; padding:7px 0; font-weight:500; }
+  .dot { width:8px; height:8px; border-radius:50%; background:#22c55e; display:inline-block; box-shadow:0 0 0 4px rgba(34,197,94,.14); flex-shrink:0; }
+  .notice-list { list-style:none; padding:0; margin:0; }
+  .notice-list li { padding:12px 0; border-bottom:1px solid #f2f2f5; }
+  .notice-list li:last-child { border-bottom:none; }
+  .notice-list a { color:var(--ink); text-decoration:none; font-weight:700; }
+  .notice-list a:hover { color:var(--cj-red); }
+  .meta { color:var(--muted); font-size:13px; margin-top:4px; }
+  .status-pill { display:inline-flex; align-items:center; gap:7px; padding:7px 16px; border-radius:999px; font-size:13px; font-weight:700; margin-top:4px; }
+  .status-pill::before { content:""; width:7px; height:7px; border-radius:50%; background:currentColor; }
+  .status-ok { background:#e9f8ef; color:#17924f; }
+  .status-no { background:#f0f1f5; color:var(--muted); }
+  .status-err { background:#fdecec; color:#c22a2a; }
+  form.search, form.monitor { display:flex; gap:10px; flex-wrap:wrap; }
+  form.stacked { display:flex; flex-direction:column; gap:12px; max-width:300px; }
+  .seg { display:flex; align-items:center; gap:6px; margin-top:16px; flex-wrap:wrap; }
+  .seg-label { font-size:12px; color:var(--muted); font-weight:700; margin-right:4px; }
+  .seg-item {
+    font-size:13px; font-weight:700; color:var(--muted); text-decoration:none; padding:6px 14px;
+    border-radius:999px; background:#f2f2f5; transition:all .15s ease;
+  }
+  .seg-item:hover { background:#e9e9ee; color:var(--ink); }
+  .seg-item.active { background:var(--cj-red); color:#fff; }
+  .auth-wrap { display:flex; justify-content:center; padding-top:20px; }
+  .auth-card { width:100%; max-width:360px; }
+  .field-label { display:flex; flex-direction:column; gap:6px; font-size:12px; font-weight:700; color:var(--muted); }
+  .field-row { display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; }
+  .field-row .field-label { flex:1; min-width:160px; }
+  input[type=text], input[type=password] {
+    flex:1; padding:11px 14px; border:1px solid #dcdde2; border-radius:10px; font-size:14px; background:#fff;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  input[type=text]:focus, input[type=password]:focus { outline:none; border-color:var(--cj-red); box-shadow:0 0 0 3px rgba(208,40,74,.12); }
+  button {
+    background:var(--cj-red); color:#fff; border:none; padding:11px 22px;
+    border-radius:10px; cursor:pointer; font-size:14px; font-weight:700; transition:background .15s ease;
+  }
+  button:hover { background:var(--cj-red-dark); }
+  table { width:100%; border-collapse:collapse; margin-top:14px; font-size:14px; }
+  th, td { text-align:left; padding:8px 6px; border-bottom:1px solid #f2f2f5; }
+  pre { background:#161a22; color:#e2e8f0; padding:14px; border-radius:10px; overflow-x:auto; font-size:13px; }
+  footer { text-align:center; color:var(--muted); font-size:12px; padding:36px 0 24px; }
+</style>
+
+</head>
+<body>
+  <div class="topstripe"></div>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="/ops-status/">
+        <img class="brandmark" src="https://prd-cdn.cj.net/static/svg/logo_b.svg" alt="CJ" width="30" height="26">
+        <span class="wordmark">CJ</span>
+        <span class="tag">Internal Ops Status</span>
+      </a>
+      <a class="session" href="/ops-status/login">Sign in</a>
+    </div>
+  </header>
+  <main>
+    <h1 class="page-title">Sign in</h1>
+    
+    <div class="auth-wrap">
+      <div class="card auth-card">
+        <p class="meta" style="margin-top:0">계정으로 로그인해서 관리자 도구를 사용하세요.</p>
+        
+        <form class="stacked" method="post" action="/ops-status/login">
+          <label class="field-label">Username
+            <input type="text" name="username" placeholder="username">
+          </label>
+          <label class="field-label">Password
+            <input type="password" name="password" placeholder="password">
+          </label>
+          <button type="submit">Sign in</button>
+        </form>
+      </div>
+    </div>
+    
+  </main>
+  <footer>CJ internal tools &middot; do not share outside the company</footer>
+</body>
+</html>

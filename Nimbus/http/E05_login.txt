@@ -1,0 +1,16 @@
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Sun, 06 Sep 2026 08:28:08 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 876
+Connection: keep-alive
+
+<!DOCTYPE html>
+<html><head><title>Sign In — Nimbus</title>
+<style>body{font-family:ui-monospace,Menlo,monospace;background:#1a1a1a;color:#d0d0d0;padding:3rem 2rem;max-width:560px;margin:0 auto;line-height:1.5}h1{color:#e6db74;font-size:1.2rem;margin-bottom:1rem}p{color:#aaa;margin-bottom:1rem;font-size:0.875rem}.panel{border:1px solid #333;padding:1rem;margin-top:1.5rem;font-size:0.875rem;color:#888}a{color:#66d9ef}</style>
+</head><body>
+<h1>Sign-in temporarily unavailable</h1>
+<p>SSO is being migrated to Okta. ETA: end of sprint.</p>
+<div class="panel"><strong>Engineers:</strong> the <a href="/jobs">job submitter</a> is unauthenticated during the migration window — submit jobs there directly. SSH still works for shell access; ping marcus on Slack if your key needs to be re-approved.</div>
+<p style="margin-top:2rem"><a href="/">← back</a></p>
+</body></html>

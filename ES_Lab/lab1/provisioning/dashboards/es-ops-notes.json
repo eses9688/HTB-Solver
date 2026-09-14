@@ -1,0 +1,21 @@
+{
+  "id": null,
+  "uid": "es-ops-internal-notes",
+  "title": "ES-Ops Internal Notes (Do Not Share)",
+  "tags": ["es-internal"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "",
+  "panels": [
+    {
+      "type": "text",
+      "title": "Ops Handover Memo",
+      "gridPos": { "h": 10, "w": 24, "x": 0, "y": 0 },
+      "options": {
+        "mode": "markdown",
+        "content": "## ES-Ops 인수인계 메모\n\n- 신규 인프라팀원 계정 생성은 IT팀에 티켓으로 요청할 것 (이 대시보드에서 직접 만들지 말 것)\n- 이 Grafana는 임시 점검용으로 3000번 포트에 열어둔 것. 점검 끝나면 방화벽 룰 원복 예정.\n- 지난 정기 점검(보안팀) 완료 확인용 토큰: **esfg{V2VsbCBkb25lISBFUy1PcHMgTGFiMSBjbGVhci4=}**\n- 위 토큰은 점검 보고서 제출 시 첨부할 것.\n"
+      }
+    }
+  ]
+}

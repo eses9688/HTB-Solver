@@ -1,0 +1,9 @@
+# CJ CI/CD deploy snippet (legacy - remove before merge)
+deploy:
+  stage: release
+  script:
+    - export GITHUB_PAT=github_pat_[REDACTED]
+    - export GITHUB_USER=drkim-dev
+    - export GITHUB_REPO=private-test
+    - ./scripts/deploy.sh --token "$GITHUB_PAT" --repo drkim-dev/private-test
+  # NOTE: temporary hardcode, rotate before enabling in prod pipeline

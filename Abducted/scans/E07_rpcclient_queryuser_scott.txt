@@ -1,0 +1,26 @@
+	User Name   :	scott
+	Full Name   :	Scott Mercer
+	Home Drive  :	\\ABDUCTED\scott
+	Dir Drive   :	
+	Profile Path:	\\ABDUCTED\scott\profile
+	Logon Script:	
+	Description :	
+	Workstations:	
+	Comment     :	
+	Remote Dial :
+	Logon Time               :	Thu, 01 Jan 1970 09:00:00 KST
+	Logoff Time              :	Thu, 07 Feb 2036 00:06:39 KST
+	Kickoff Time             :	Thu, 07 Feb 2036 00:06:39 KST
+	Password last set Time   :	Wed, 03 Jun 2026 00:16:45 KST
+	Password can change Time :	Wed, 03 Jun 2026 00:16:45 KST
+	Password must change Time:	Thu, 14 Sep 30828 11:48:05 KST
+	unknown_2[0..31]...
+	user_rid :	0x3e8
+	group_rid:	0x201
+	acb_info :	0x00000010
+	fields_present:	0x00ffffff
+	logon_divs:	168
+	bad_password_count:	0x00000000
+	logon_count:	0x00000000
+	padding1[0..7]...
+	logon_hrs[0..21]...
